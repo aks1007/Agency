@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+
+    <meta charset="UTF-8" content="width=device-width, initial-scale=1"> 
+    
+<title>AGENCY by TANTRA </title>   
+
+    <!--CSS-->
+    <link rel="stylesheet" href="../../../node_modules/@fortawesome/fontawesome-free/css/all.css">                               
+    <link rel="stylesheet" href="../../../assets/css/menu.css">   
+    <link rel="stylesheet" href="../../../assets/css/input.css">
+    <link rel="stylesheet" href="../../../assets/css/hover.css">  
+    <link rel="stylesheet" href="../../../assets/fonts/OpenSans.css">
+    <link rel="stylesheet" href="../../../assets/fonts/Fredoka-One.css">
+    <link rel="stylesheet" href="../../../assets/fonts/Orbitron.css">
+
+  </head>
+
+  <body  onkeydown="shortCuts(event)">
+
+    <!--MENU-->
+    <div class="menu-bar">
+
+      <a href="brokerageHome.html" id="back" class="hvr-icon-back">
+        <i class="fas fa-arrow-circle-left hvr-icon" aria-hidden="true"></i>
+        <br>
+        BACK
+      </a> 
+
+      <a id="new" href="brokerageNew.html" class="hvr-icon-pulse-grow">
+        <i class="fas fa-plus-square hvr-icon" aria-hidden="true"></i>
+        <br>
+        NEW
+      </a> 
+
+      <a id="update" href="brokerageUpdate.html" class="hvr-icon-pulse-grow">
+          <i class="fas fa-edit hvr-icon" aria-hidden="true"></i>
+          <br>
+          UPDATE
+      </a>
+
+      <a id="delete" href="brokerageDelete.html" class="hvr-icon-pulse-grow">
+          <i class="fas fa-trash hvr-icon" aria-hidden="true"></i>
+          <br>
+          DELETE
+      </a>
+
+      <a id="db" href="brokerageDatabase.html" class="hvr-icon-pulse-grow">
+          <i class="fas fa-database hvr-icon" aria-hidden="true"></i>
+          <br>
+          COLLECTION
+      </a>
+
+
+    </div>
+
+    <!--HEADING-->
+    <div id=top>
+
+      <h1 id=topHeading>
+
+        BROKERAGE DELETE
+
+      </h1>
+    
+    </div>
+
+    <!--FORM-->
+    <div>
+      
+      <form id="forme" spellcheck="false" >       
+
+        <table>    
+          
+          <tr>
+
+            <td>
+              <span>
+                SERIAL NO.
+              </span>
+              <br>
+              <input type="number" step="any" id="serialNo" placeholder = "Serial No." autocomplete="off" autofocus min=1 required>
+            </td>
+
+            <td>
+              <span>
+                ENTRY NO.
+              </span>
+              <br>
+              <input type="number" step="any" id="entryNo" placeholder = "Entry No." autocomplete="off" min=1 disabled>
+            </td>
+
+            <td>
+              <span>
+                DATE
+              </span>
+              <br>
+              <input type="date" id="date" autocomplete="off" required disabled>
+            </td>
+
+            <td>
+              <span>
+              SUPPLIER
+              </span>
+              <br>
+              <input list="suppliers" style="width: 100%;" type="text" id="supplier" placeholder ="SUPPLIER"  onfocus="showSuppliers()" onfocusout="checkSupplier();showVouchers();" autocomplete="off" required disabled>
+              <datalist id="suppliers"></datalist>
+            </td>
+
+            <td style="width: 20%;">
+              <span>
+                MODE OF PAYMENT
+              </span>
+              <br>
+              <select id="mop" disabled>
+                <option value="CASH">CASH</option>
+                <option value="CASHLESS">CASHLESS</option>
+              </select>
+            </td>
+            
+          </tr>
+
+        </table>
+
+        <table>
+
+          <tr>
+
+            <td>
+              <span>
+                CHEQUE NO / UTR NO
+              </span>
+              <br>
+              <input type="text" placeholder="CHEQUE NO./ UTR NO." id='txnNo' autocomplete="off" disabled>
+            </td>
+
+            <td>
+              <span>
+                DATE OF TRANSACTION
+              </span>
+              <br>
+              <input type="date" id='dateOfTxn' autocomplete="off" disabled>
+            </td>
+
+            <td>
+              <span>
+                BANK
+              </span>
+              <br>
+              <input type="text" list="banksList" placeholder="BANK" id='bank' autocomplete="off" onfocus="showBanks();" onfocusout="checkBank();" disabled>
+              <datalist id="banksList"></datalist>
+            </td>
+
+            <td>
+              <span>
+               BROKERAGE RECEIVED
+              </span>
+              <br>
+              <input type="number" step="any" min=1 id="brokReceived" placeholder="BROKERAGE RECEIVED" autocomplete="off" value=0 required disabled>
+            </td>
+
+            <td>
+              <span>
+                TDS AMOUNT
+              </span>
+              <br>
+              <input type="number" step="any" min=0 id="tds" placeholder = "TDS AMOUNT" autocomplete="off" value=0 required disabled>
+            </td>
+
+          </tr>
+
+        </table>
+
+        <table>
+
+          <tr>
+
+            <td>
+              <span>
+                TOTAL BROKERAGE
+              </span>
+              <br>
+              <input type="number" step="any" min=0 id="tAmount" placeholder = "TOTAL BROKERAGE" autocomplete="off" value=0 disabled>
+            </td>
+
+            <td>
+              <span>
+                ADJUSTED BROKERAGE
+              </span>
+              <br>
+              <input type="number" step="any" min=0 id="aAmount" placeholder = "ADJUSTED BROKERAGE" autocomplete="off" value=0 disabled>
+            </td>
+
+            <td>
+              <span>
+                BALANCE BROKERAGE
+              </span>
+              <br>
+              <input type="number" step="any" min=1 id="bAmount" placeholder = "BALANCE BROKERAGE" autocomplete="off" value=0 disabled>
+            </td>
+          
+          </tr>
+       
+        </table>
+        
+        <table>
+
+          <tr>
+
+            <td>
+              <span>
+                GST PERCENTAGE
+              </span>
+              <br>
+              <input type="number" step="any" min=1 id="gstP" placeholder = "GST PERCENTAGE" autocomplete="off" disabled>
+            </td>
+
+            <td>
+              <span>
+                BROKERAGE PERCENTAGE
+              </span>
+              <br>
+              <input type="number" step="any" min=0 id="brokP" placeholder = "BROKERAGE PERCENTAGE" autocomplete="off" disabled>
+            </td>
+
+            <td>
+              <span>
+               FROM
+              </span>
+              <br>
+              <input type="date" id="dateFrom" autocomplete="off" required disabled>
+            </td>
+
+            <td>
+              <span>
+               TO
+              </span>
+              <br>
+              <input type="date" id="dateTo" autocomplete="off" required disabled>
+            </td>
+
+            <td>
+              <span>
+                SELECT ALL VOUCHERS
+              </span>
+              <br>
+              <input style="height: 40px;" type="checkbox" id="selectAll" disabled>
+            </td>
+
+          </tr>
+
+        </table> 
+        
+        <table id=vouchers style="display: none">
+          
+          <caption style="font-family: Open Sans;font-weight: 900;font-size: 17.5px;">VOUCHERS</caption>
+
+          <tr class="List">
+
+            <th style="font-size: 17.5px;width:4.09%"">
+              <span>
+                #
+              </span>
+            </th>
+
+            <th style="font-size: 17.5px;">
+              <span>
+                SELECT
+              </span>
+            </th> 
+
+            <th style="font-size: 17.5px;">
+              <span>
+                VOUCHER NO
+              </span>
+            </th>            
+
+            <th style="font-size: 17.5px;">
+              <span>
+                VOUCHER DATE
+              </span>
+            </th>
+
+            <th style="font-size: 17.5px;">
+              <span>
+                CUSTOMER
+              </span>
+            </th>
+
+            <th style="font-size: 17.5px;width:4.09%">
+              <span>
+                BILLS
+              </span>
+            </th>
+
+            <th style="font-size: 17.5px;">
+              <span>
+                AMOUNT
+              </span>
+            </th>
+
+            <th style="font-size: 17.5px;">
+              <span>
+                BROKERAGE %
+              </span>
+            </th>
+
+            <th style="font-size: 17.5px;">
+              <span>
+                BROKERAGE AMOUNT
+              </span>
+            </th>
+
+          </tr>
+
+        </table>   
+
+        <table>
+
+          <tr>
+
+            <td>
+              <span>
+                REMARKS
+              </span>
+              <br>
+              <input style="width: 67%;text-transform: none;" type="text" id="remarks" placeholder="Remarks If Any.." autocomplete="off" disabled> 
+            </td>
+
+          </tr>
+
+        </table>
+
+        <!--SUBMIT BUTTON-->
+        <br><br>
+        <div style="text-align: center">
+          <input type="submit" id="submitButton" class = "btn" value="DELETE">
+        </div>        
+
+      </form>
+
+    </div>
+
+    <div id="snackbar"></div>
+
+    <script src="brokerageDelete.js"></script>
+    <script src="brokerage.js"></script>
+
+  </body>
+  
+</html>

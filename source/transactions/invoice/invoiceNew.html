@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+
+    <meta charset="UTF-8" content="width=device-width, initial-scale=1"> 
+    
+<title>AGENCY by TANTRA </title>   
+
+    <!--CSS-->
+    <link rel="stylesheet" href="../../../node_modules/@fortawesome/fontawesome-free/css/all.css">                               
+    <link rel="stylesheet" href="../../../assets/css/menu.css">   
+    <link rel="stylesheet" href="../../../assets/css/input.css">
+    <link rel="stylesheet" href="../../../assets/css/hover.css">  
+    <link rel="stylesheet" href="../../../assets/fonts/OpenSans.css">
+    <link rel="stylesheet" href="../../../assets/fonts/Fredoka-One.css">
+    <link rel="stylesheet" href="../../../assets/fonts/Orbitron.css">
+
+  </head>
+
+  <body  onkeydown="shortCuts(event)">
+
+    <!--MENU-->
+    <div class="menu-bar" style="text-align:center">
+
+      <a href="invoiceHome.html" id="back" class="hvr-icon-back">
+        <i class="fas fa-arrow-circle-left hvr-icon" aria-hidden="true"></i>
+        <br>
+        BACK
+      </a> 
+
+      <a id="new" href="invoiceNew.html" class="hvr-icon-pulse-grow">
+        <i class="fas fa-plus-square hvr-icon" aria-hidden="true"></i>
+        <br>
+        NEW
+      </a> 
+
+      <a id="update" href="invoiceUpdate.html" class="hvr-icon-pulse-grow">
+          <i class="fas fa-edit hvr-icon" aria-hidden="true"></i>
+          <br>
+          UPDATE
+      </a>
+
+      <a id="delete" href="invoiceDelete.html" class="hvr-icon-pulse-grow">
+          <i class="fas fa-trash hvr-icon" aria-hidden="true"></i>
+          <br>
+          DELETE
+      </a>
+
+      <a id="db" href="invoiceDatabase.html" class="hvr-icon-pulse-grow">
+          <i class="fas fa-database hvr-icon" aria-hidden="true"></i>
+          <br>
+          COLLECTION
+      </a>
+
+
+    </div>
+
+    <!--HEADING-->
+    <div id=top>
+
+      <h1 id=topHeading>
+
+        NEW INVOICE 
+
+      </h1>
+    
+    </div>
+
+    <div id="mySidenavLeft">
+
+      <a href="#" style="top:100px;" id="ai" onclick="addItem()"><i class="fas fa-plus-square"></i>&nbsp;ADD ITEM</a>
+      
+    </div>
+
+    <div id="mySidenavRight">
+
+      <a href="#" style="top:100px;" id="di" onclick="deleteItem()"><i class="fas fa-trash"></i>&nbsp;DELETE ITEM</a>
+      
+    </div>
+
+    <!--FORM-->
+    <div>
+      
+      <form id="forme" spellcheck="false" >       
+
+        <table>    
+          
+          <tr>
+
+            <td>
+              <span>
+                SERIAL NO.
+              </span>
+              <br>
+              <input type="number" id="serialNo" placeholder = "Serial No." autocomplete="off" autofocus onfocusout="checkForInvoice()" min=0 required>
+            </td>
+
+            <td>
+              <span>
+                ENTRY NO.
+              </span>
+              <br>
+              <input type="number" id="entryNo" placeholder = "Entry No." autocomplete="off" min=0>
+            </td>
+
+            <td>
+              <span>
+                INVOICE NO.
+              </span>
+              <br>
+              <input type="number" id="billNo" placeholder = "INVOICE NO." onfocusout="checkCombo()" autocomplete="off" min=0 required>
+            </td>
+
+            <td>
+              <span>
+                ORDER NO.
+              </span>
+              <br>
+              <input type="number" id="orderNo" placeholder = "Order No." autocomplete="off" min=0 required>
+            </td>
+
+          </tr>
+          
+          <tr>
+
+            <td>
+              <span>
+                DATE
+              </span>
+              <br>
+              <input type="date" id="date" autocomplete="off" required>
+            </td>
+
+            <td>
+              <span>
+                SUB AGENT
+              </span>
+              <br>
+              <input type="text" id="subAgent" placeholder="SUB AGENT" autocomplete="off">
+            </td>
+
+            <td>
+              <span>
+              CUSTOMER
+              </span>
+              <br>
+              <input list="customers" style="width: 100%;" type="text" id="customer" placeholder ="CUSTOMER"  onfocus="showCustomers()" onfocusout="checkCustomer();" onblur="checkCombo()" autocomplete="off" required>
+              <datalist id="customers"></datalist>
+            </td>
+
+            <td>
+              <span>
+              SUPPLIER
+              </span>
+              <br>
+              <input list="suppliers" style="width: 100%;" type="text" id="supplier" placeholder ="SUPPLIER"  onfocus="showSuppliers()" onfocusout="checkSupplier();" onblur="checkCombo()" autocomplete="off" required>
+              <datalist id="suppliers"></datalist>
+            </td>
+            
+          </tr>
+        
+        </table>
+        
+        <table>
+
+          <tr>
+            
+            <td>
+              <span>
+               TRANSPORTER
+              </span>
+              <br>
+              <input list="transporters" type="text" id="transporter" placeholder="TRANSPORTER" onfocus="showTransporters();" onfocusout="checkTransporter()" autocomplete="off" required>
+              <datalist id="transporters"></datalist>
+            </td>
+
+            <td>
+              <span>
+               DESTINATION
+              </span>
+              <br>
+              <input list="destinations" type="text" id="destination" placeholder ="DESTINATION" onfocus="showCities()" onfocusout="checkCity()" autocomplete="off" required>
+              <datalist id="destinations"></datalist>
+            </td>
+
+            <td>
+              <span>
+                NO. OF CASES
+              </span>
+              <br>
+              <input type="number" min=0 id="cases" placeholder = "NO. OF CASES" autocomplete="off" required>
+            </td>
+
+            <td>
+              <span>
+                L.R. NO.
+              </span>
+              <br>
+              <input type="number" min=0 id="lrNo" placeholder="L.R. NUMBER" autocomplete="off" required>
+            </td>
+
+            <td>
+              <span>
+                L.R. DATE
+              </span>
+              <br>
+              <input type="date" id="lrDate" autocomplete="off" required>
+            </td>
+
+          </tr>
+
+        </table> 
+        
+        <table id=items style="display: none;">
+          
+          <caption style="font-family: Open Sans;font-weight: 900;font-size: 17.5px;">ITEMS</caption>
+
+          <tr class="List">
+
+            <th style="font-size: 17.5px;">
+              <span>
+                #
+              </span>
+            </th>
+
+            <th style="font-size: 17.5px;">
+              <span>
+                ITEM NAME
+              </span>
+            </th>
+
+            <th style="font-size: 17.5px;">
+              <span>
+                HSN CODE
+              </span>
+            </th>
+
+            <th style="font-size: 17.5px;">
+              <span>
+                PCS
+              </span>
+            </th>
+
+            <th style="font-size: 17.5px;">
+              <span>
+                CUT
+              </span>
+            </th>
+
+            <th style="font-size: 17.5px;">
+              <span>
+                MTS
+              </span>
+            </th>
+
+            <th style="font-size: 17.5px;">
+              <span>
+                RATE
+              </span>
+            </th>
+
+            <th style="font-size: 17.5px;width: 11.1%;">
+              <span>
+                UNIT
+              </span>
+            </th>
+
+            <th style="font-size: 17.5px;">
+              <span>
+                AMOUNT
+              </span>
+            </th>
+
+          </tr>
+
+        </table>
+
+        <table>
+
+          <td>
+            <span>
+              CUMULATIVE AMOUNT
+            </span>
+            <br>
+            <input style="width: 31.5%;" type="number" step="any" id="ca" placeholder = "CUMULATIVE AMOUNT" autocomplete="off" min=0>
+          </td>
+
+        </table>
+
+        <table> 
+          
+          <tr>
+
+            <td>
+              <span>
+                PACKAGING CHARGES
+              </span>
+              <br>
+              <input style="width:20%" type="number" step="any" id="pcP" placeholder = "%" oninput="calculateBefore('pc')" autocomplete="off" min=0>
+              <input style="width:75%" type="number" step="any" id="pc" placeholder = "PACKAGING CHARGES" oninput="setPbefore('pc')" autocomplete="off" min=0>
+            </td>
+  
+            <td>
+              <span>
+                RATE DIFFERENCE
+              </span>
+              <br>
+              <input style="width:20%" type="number" step="any" id="rdP" placeholder = "%" oninput="calculateBefore('rd')" autocomplete="off" min=0>
+              <input style="width:75%" type="number" step="any" id="rd" placeholder = "RATE DIFFERENCE" oninput="setPbefore('rd')" autocomplete="off" min=0>
+            </td>
+  
+            <td>
+              <span>
+                DEDUCTION
+              </span>
+              <br>
+              <input style="width:20%" type="number" step="any" id="ddP" placeholder = "%" oninput="calculateBefore('dd')" autocomplete="off" min=0>
+              <input style="width:75%" type="number" step="any" id="dd" placeholder = "DEDUCTION" oninput="setPbefore('dd')" autocomplete="off" min=0>
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td>
+              <span>
+                DISCOUNT
+              </span>
+              <br>
+              <input style="width:20%" type="number" step="any" id="discP" placeholder = "%" oninput="calculateBefore('disc')" autocomplete="off" min=0>
+              <input style="width:75%" type="number" step="any" id="disc" placeholder = "DISCOUNT" oninput="setPbefore('disc')" autocomplete="off" min=0>
+            </td>
+  
+            <td>
+              <span>
+                SURCHARGE
+              </span>
+              <br>
+              <input style="width:20%" type="number" step="any" id="scP" placeholder = "%" oninput="calculateAfter('sc')" autocomplete="off" min=0>
+              <input style="width:75%" type="number" step="any" id="sc" placeholder = "SURCHARGE" oninput="setPafter('sc')" autocomplete="off" min=0>
+            </td>
+  
+            <td>
+              <span>
+                SWEET LESS
+              </span>
+              <br>
+              <input style="width:20%" type="number" step="any" id="slP" placeholder = "%" oninput="calculateAfter('sl')" autocomplete="off" min=0>
+              <input style="width:75%" type="number" step="any" id="sl" placeholder = "SWEET LESS" oninput="setPafter('sl')" autocomplete="off" min=0>
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td>
+              <span>
+                CGST
+              </span>
+              <br>
+              <input style="width:20%" type="number" step="any" id="cgstP" placeholder = "%" oninput="calculateTax('cgst')" autocomplete="off" min=0>
+              <input style="width:75%" type="number" step="any" id="cgst" placeholder = "CGST" oninput="setPtax('cgst')" autocomplete="off" min=0>
+            </td>
+  
+            <td>
+              <span>
+                SGST
+              </span>
+              <br>
+              <input style="width:20%" type="number" step="any" id="sgstP" placeholder = "%" oninput="calculateTax('sgst')" autocomplete="off" min=0>
+              <input style="width:75%" type="number" step="any" id="sgst" placeholder = "SGST" oninput="setPtax('sgst')" autocomplete="off" min=0>
+            </td>
+  
+            <td>
+              <span>
+                IGST
+              </span>
+              <br>
+              <input style="width:20%" type="number" step="any" id="igstP" placeholder = "%" oninput="calculateTax('igst')" autocomplete="off" min=0>
+              <input style="width:75%" type="number" step="any" id="igst" placeholder = "IGST" oninput="setPtax('igst')" autocomplete="off" min=0>
+            </td>
+
+          </tr>
+
+        </table>  
+
+        <table>
+
+          <td>
+            <span>
+              NET AMOUNT
+            </span>
+            <br>
+            <input style="width: 31.5%;" type="number" step="any" id="netAmount" placeholder = "NET AMOUNT" autocomplete="off" min=0 disabled>
+          </td>
+
+        </table>
+
+        <table>
+
+          <tr>
+
+            <td>
+              <span>
+                REMARKS
+              </span>
+              <br>
+              <input style="width: 67%;text-transform: none;" type="text" id="remarks" placeholder="Remarks If Any.." autocomplete="off"> 
+            </td>
+
+          </tr>
+
+        </table>
+
+        <!--SUBMIT BUTTON-->
+        <br><br>
+        <div style="text-align: center">
+          <input type="submit" id="submitButton" class = "btn" value="SUBMIT">
+          <input type="button" id="printButton" class = "btn" value="PRINT" onfocusout="rl()" disabled>
+        </div>        
+
+      </form>
+
+    </div>
+
+    <div id="snackbar"></div>
+    
+    <script src="invoiceNew.js"></script>
+    <script src="invoice.js"></script>
+
+  </body>
+  
+</html>

@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+
+    <meta charset="UTF-8" content="width=device-width, initial-scale=1"> 
+    
+<title>AGENCY by TANTRA </title>
+
+    <!--CSS-->    
+    <link rel="stylesheet" href="../../../node_modules/@fortawesome/fontawesome-free/css/all.css"> 
+    <link rel=stylesheet href="../../../assets/css/print.css">
+    <link rel="stylesheet" href="../../../assets/fonts/OpenSans.css">
+    <link rel="stylesheet" href="../../../assets/fonts/Fredoka-One.css">
+    <link rel="stylesheet" href="../../../assets/fonts/Orbitron.css">
+    <link rel="stylesheet" href="../../../assets/fonts/Comfortaa.css">
+     
+  </head>
+
+  <body>
+
+    <div id=top style="margin-top: 0">
+
+      <table>
+
+        <tr>
+          <td>
+            <p id=companyName></p>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <p id=address></p>
+          </td>
+        </tr> 
+      </table>
+      
+      <table>
+        <tr>
+          <td  style="text-align: center;width: 30%;">
+            <span id=phoneNo></span>
+            <br>
+            <span id=telephoneNo></span>
+          </td>
+          <td style="text-align: center; width: 30%;">
+            <span id=gstin></span>
+            <br>
+            <span id=pan></span>
+          </td>
+        </tr>
+      </table>
+    
+    </div>
+
+    <div id=top>
+
+      <h1 id="heading">
+
+        BROKERAGE
+
+      </h1>
+    
+    </div>
+      
+      <!--FORM-->
+    <div>
+      
+      <form id="forme" spellcheck="false" >       
+
+        <table>    
+          
+          <tr>
+
+            <td>
+              <span class="field">
+                SERIAL NO
+              </span>
+              <br>
+              <span id=serialNo></span>
+            </td>
+
+            <td>
+              <span class="field">
+                DATE
+              </span>
+              <br>
+              <span id=date></span>
+            </td>
+
+            <td>
+              <span class="field">
+              CUSTOMER
+              </span>
+              <br>
+              <span id=customer></span>
+            </td>
+
+            <td>
+              <span class="field">
+              SUPPLIER
+              </span>
+              <br>
+              <span id=supplier></span>
+            </td>
+            
+          </tr>
+
+        </table>
+        
+        <table>
+
+          <tr>            
+
+            <td>
+              <span class="field">
+                CREDIT NOTE
+              </span>
+              <br>
+              <span id=cNo></span>
+            </td>
+
+            <td>
+              <span class="field">
+                DEBIT NOTE
+              </span>
+              <br>
+              <span id=dNo></span>
+            </td>
+            
+            <td>
+              <span class="field">
+                AGENT G.R. NO
+              </span>
+              <br>
+              <span id=agrNo></span>
+            </td>
+
+          </tr>
+
+        </table> 
+
+        <br><br>
+        
+        <table id=items class=content disabled>
+          
+          <caption style="font-family: Open Sans;font-weight: 900;font-size: 15px;">ITEMS</caption>
+
+          <tr class="List">
+
+            <th style="font-size: 15px;">
+              <span>
+                #
+              </span>
+            </th>
+
+            <th style="font-size: 15px;">
+              <span>
+                INVOICE NO
+              </span>
+            </th>
+
+            <th style="font-size: 15px;">
+              <span>
+                INVOICE AMOUNT
+              </span>
+            </th>
+
+            <th style="font-size: 15px;">
+              <span>
+                TAXABLE G.R.
+              </span>
+            </th>
+
+            <th style="font-size: 15px;">
+              <span>
+                GST %
+              </span>
+            </th>
+
+            <th style="font-size: 15px;">
+              <span>
+                GST AMOUNT
+              </span>
+            </th>
+
+            <th style="font-size: 15px;">
+              <span>
+                TOTAL G.R.
+              </span>
+            </th>
+
+            <th style="font-size: 15px;width: 11.1%;">
+              <span>
+                LR NO.
+              </span>
+            </th>
+
+            <th style="font-size: 15px;">
+              <span>
+                L.R. DATE
+              </span>
+            </th>
+
+            <th style="font-size: 15px;">
+              <span>
+                TRANSPORTER
+              </span>
+            </th>
+
+            <th style="font-size: 15px;">
+              <span>
+                STATUS
+              </span>
+            </th>
+
+          </tr>
+
+        </table>
+
+        <br><br>
+
+        </table>
+
+        <table>
+    
+          <!--ADDRESS-->
+          <tr style="border-bottom: 1px solid black;">
+
+            <td>  
+              <span>
+                TOTAL
+              </span>
+            </td>
+
+          </tr>
+
+        </table>
+          
+        <table>
+
+          <tr>            
+
+            <td>
+              <span class="field">
+                TAXABLE G.R. AMOUNT
+              </span>
+              <br>
+              <span id=tta></span>
+            </td>
+
+            <td>
+              <span class="field">
+                GST AMOUNT
+              </span>
+              <br>
+              <span id=tax></span>
+            </td>
+            
+            <td>
+              <span class="field">
+                TOTAL G.R. AMOUNT
+              </span>
+              <br>
+              <span id=tgra></span>
+            </td>
+
+          </tr>
+
+        </table>
+
+        <table class=end>
+
+          <tr>
+
+            <td>
+              <span class="field">
+                REMARKS :
+              </span>
+              <span id=remarks></span> 
+            </td>
+
+          </tr>
+
+        </table>       
+
+      </form>   
+
+      <footer>
+        <span style="border-top: 1px solid black;">AUTHORISED SIGNATORY</span>
+      </footer>
+
+    </div>
+    
+    <script src="brokeragePrint.js"></script>
+
+  </body>
+  
+</html>

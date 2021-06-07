@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+
+    <meta charset="UTF-8" content="width=device-width, initial-scale=1"> 
+    
+<title>AGENCY by TANTRA </title>   
+
+    <!--CSS-->
+    <link rel="stylesheet" href="../../../node_modules/@fortawesome/fontawesome-free/css/all.css">                               
+    <link rel="stylesheet" href="../../../assets/css/menu.css">   
+    <link rel="stylesheet" href="../../../assets/css/input.css">
+    <link rel="stylesheet" href="../../../assets/css/hover.css">  
+    <link rel="stylesheet" href="../../../assets/fonts/OpenSans.css">
+    <link rel="stylesheet" href="../../../assets/fonts/Fredoka-One.css">
+    <link rel="stylesheet" href="../../../assets/fonts/Orbitron.css">
+
+  </head>
+
+  <body  onkeydown="shortCuts(event)">
+
+    <!--MENU-->
+    <div class="menu-bar" style="text-align:center">
+
+      <a href="locationHome.html" id="back" class="hvr-icon-back">
+        <i class="fas fa-arrow-circle-left hvr-icon" aria-hidden="true"></i>
+        <br>
+        BACK
+      </a> 
+
+      <a id="new" href="locationNew.html" class="hvr-icon-pulse-grow">
+        <i class="fas fa-plus-square hvr-icon" aria-hidden="true"></i>
+        <br>
+        NEW
+      </a> 
+
+      <a id="view" href="locationUpdate.html" class="hvr-icon-pulse-grow">
+          <i class="fas fa-search hvr-icon" aria-hidden="true"></i>
+          <br>
+          UPDATE
+      </a>
+
+      <a id="delete" href="locationDelete.html" class="hvr-icon-pulse-grow">
+          <i class="fas fa-trash hvr-icon" aria-hidden="true"></i>
+          <br>
+          DELETE
+      </a>
+
+      <a id="db" href="locationDatabase.html" class="hvr-icon-pulse-grow">
+          <i class="fas fa-database hvr-icon" aria-hidden="true"></i>
+          <br>
+          COLLECTION
+      </a>
+
+
+    </div>
+
+    <!--HEADING-->
+    <div id=top>
+
+      <h1 id=topHeading>
+
+        NEW LOCATION
+
+      </h1>
+    
+    </div>
+
+    <!--FORM-->
+    <div>
+      
+      <form id="forme" spellcheck="false" >       
+
+        <table>    
+
+          <!--GENERAL DETAILS-->
+          <tr>
+
+            <td colspan="4">
+              <span>
+                CITY
+              </span>
+              <br>
+              <input style="width: 25%;" type="text" id="city" placeholder ="CITY" onkeydown="Slash(event)" autofocus autocomplete="off" required>
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td class="column20">
+              <span>
+                STATE
+              </span>
+              <br>
+              <input list="states" style="width: 25%;" type="text" id="state" placeholder ="STATE" autocomplete="off">
+              <datalist id=states>                
+                <option value="ANDAMAN & NICOBAR ISLANDS">ANDAMAN & NICOBAR ISLANDS</option>
+                <option value="ANDHRA PRADESH">ANDHRA PRADESH</option>
+                <option value="ARUNACHAL PRADESH">ARUNACHAL PRADESH</option>
+                <option value="ASSAM">ASSAM</option>
+                <option value="BIHAR">BIHAR</option>
+                <option value="CHANDIGARH"></option>
+                <option value="CHATTISGARH"></option>
+                <option value="DAMAN & DIU">DAMAN</option>
+                <option value="DELHI">DELHI</option>
+                <option value="GOA">GOA</option>
+                <option value="GUJARAT">GUJARAT</option>
+                <option value="HARYANA">HARYANA</option>
+                <option value="HIMACHAL PRADESH">HIMACHAL PRADESH</option>
+                <option value="JAMMU & KASHMIR">JAMMU & KASHMIR</option>
+                <option value="JHARKHAND">JHARKHAND</option>
+                <option value="KARNATAKA">KARNATAKA</option>
+                <option value="KERALA">KERALA</option>
+                <option value="LADAKH">LADAKH</option>
+                <option value="LAKSHADWEEP">LAKSHADWEEP</option>
+                <option value="MADHYA PRADESH">MADHYA PRADESH</option>
+                <option value="MAHARASHTRA">MAHARASHTRA</option>
+                <option value="MANIPUR">MANIPUR</option>
+                <option value="MEGHALAYA">MEGHALAYA</option>
+                <option value="MIZORAM">MIZORAM</option>
+                <option value="NAGALAND">NAGALAND</option>
+                <option value="ODISHA">ODISHA</option>
+                <option value="PUDUCHERRY">PUDUCHERRY</option>
+                <option value="PUNJAB">PUNJAB</option>
+                <option value="RAJASTHAN">RAJASTHAN</option>
+                <option value="SIKKIM">SIKKIM</option>
+                <option value="TAMIL NADU">TAMIL NADU</option>
+                <option value="TELANGANA">TELANGANA</option>
+                <option value="UTTARAKHAND">UTTARAKHAND</option>
+                <option value="UTTAR PRADESH">UTTAR PRADESH</option>
+                <option value="WEST BENGAL">WEST BENGAL</option>
+              </datalist>
+            </td>
+
+          </tr>       
+
+          <tr>
+
+            <td colspan="4">
+                <span>
+                STD CODE
+                </span>
+                <br>
+                <input style="width: 25%;" type="text" id="stdCode" placeholder ="STD CODE" autocomplete="off">
+            </td>
+
+          </tr> 
+
+        </table>
+
+        <!--SUBMIT BUTTON-->
+        <br><br>
+        <div style="text-align: center">
+          <input type="submit" id="submitButton" class = "btn" value="SUBMIT">
+        </div>        
+
+      </form>
+
+    </div>
+
+    <div id="snackbar"></div>
+    
+    <script src="locationNew.js"></script>
+    <script src="location.js"></script>
+
+  </body>
+  
+</html>

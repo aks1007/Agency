@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+
+    <meta charset="UTF-8" content="width=device-width, initial-scale=1"> 
+    
+<title>AGENCY by TANTRA </title>   
+
+    <!--CSS-->
+    <link rel="stylesheet" href="../../../node_modules/@fortawesome/fontawesome-free/css/all.css"> 
+    <link rel="stylesheet" href="../../../assets/css/database.css">
+    <link rel="stylesheet" href="../../../assets/css/hover.css">  
+    <link rel="stylesheet" href="../../../assets/fonts/Alegreya.css">
+    <link rel="stylesheet" href="../../../assets/fonts/Comfortaa.css">
+    <link rel="stylesheet" href="../../../assets/fonts/Fredoka-One.css">
+    <link rel="stylesheet" href="../../../assets/fonts/Orbitron.css">    
+
+  </head>
+
+  <body  onload="showDatabase()" onkeydown="shortCuts(event)">
+
+    <!--MENU-->
+    <div class="menu-bar" style="text-align:center">
+
+      <a href=# id="back" class="hvr-icon-back">
+        <i class="fas fa-arrow-circle-left hvr-icon" aria-hidden="true"></i>
+        <br>
+        BACK
+      </a> 
+
+      <a id="new" href="supplierNew.html" class="hvr-icon-pulse-grow">
+        <i class="fas fa-plus-square hvr-icon" aria-hidden="true"></i>
+        <br>
+        NEW
+      </a> 
+
+      <a id="view" href="supplierView.html" class="hvr-icon-pulse-grow">
+          <i class="fas fa-search hvr-icon" aria-hidden="true"></i>
+          <br>
+          UPDATE
+      </a>
+
+      <a id="delete" href="supplierDelete.html" class="hvr-icon-pulse-grow">
+          <i class="fas fa-trash hvr-icon" aria-hidden="true"></i>
+          <br>
+          DELETE
+      </a>
+
+      <a id="db" href="supplierDatabase.html" class="hvr-icon-pulse-grow">
+          <i class="fas fa-database hvr-icon" aria-hidden="true"></i>
+          <br>
+          COLLECTION
+      </a>
+
+    </div>
+
+    <div class="menu-bar" style="top: 100px;">
+      <!--HEADING-->
+      <div id=top>
+
+        <h1 id=topHeading>
+
+          SUPPLIER DATABASE
+
+        </h1>
+      
+      </div>
+    </div> 
+
+    <div>
+
+      <table id="database">
+
+        <!--SUPPLIER DATABASE-->            
+        <tr style="background : transparent; border : 0px solid;">
+
+          <th>
+            <span>
+              #
+            </span>
+        </th>
+
+        <th>
+          <span>
+            SUPPLIER
+          </span>
+        </th>
+
+        <th>
+          <span>
+            GROUP
+          </span>
+        </th>
+
+        <th>
+          <span>
+            DEALS IN
+          </span>
+        </th>
+
+        <th>
+          <span>
+            EMAIL ID
+          </span>
+        </th>
+
+        <th>
+          <span>
+            PHONE NO
+          </span>
+        </th>
+
+        <th>
+          <span>
+            MOBILE NO
+          </span>
+        </th>
+
+        <th>
+          <span>
+            ADDRESS
+          </span>
+        </th>
+
+        <th>
+          <span>
+            POSTAL SERVICE
+          </span>
+        </th>       
+
+        <th>
+          <span>
+             PAN NO
+          </span>
+        </th>
+
+        <th>
+          <span>
+            GST NO
+          </span>
+        </th>
+
+        <th>
+          <span>
+            POC
+          </span>
+        </th>        
+
+        <th>
+          <span>
+            DUE DATE LIMIT
+          </span>
+        </th>
+
+        <th>
+          <span>
+            R.D. PER PIECE
+          </span>
+        </th>        
+
+        <th>
+          <span>
+            R.D. PER METER
+          </span>
+        </th>
+
+        <th>
+          <span>
+            COMMISSION %
+          </span>
+        </th>
+
+        <th>
+          <span>
+            DISCOUNT %
+          </span>
+        </th>
+                  
+        </tr> 
+
+      </table>    
+
+    </div>      
+
+    <script src="supplierDatabase.js"></script>
+    <script src="supplier.js"></script>
+
+  </body>  
+
+</html>    

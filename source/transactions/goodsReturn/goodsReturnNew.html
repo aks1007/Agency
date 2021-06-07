@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+
+    <meta charset="UTF-8" content="width=device-width, initial-scale=1"> 
+    
+<title>AGENCY by TANTRA </title>   
+
+    <!--CSS-->
+    <link rel="stylesheet" href="../../../node_modules/@fortawesome/fontawesome-free/css/all.css">                               
+    <link rel="stylesheet" href="../../../assets/css/menu.css">   
+    <link rel="stylesheet" href="../../../assets/css/input.css">
+    <link rel="stylesheet" href="../../../assets/css/hover.css">  
+    <link rel="stylesheet" href="../../../assets/fonts/OpenSans.css">
+    <link rel="stylesheet" href="../../../assets/fonts/Fredoka-One.css">
+    <link rel="stylesheet" href="../../../assets/fonts/Orbitron.css">
+
+  </head>
+
+  <body  onkeydown="shortCuts(event)">
+
+    <!--MENU-->
+    <div id="menu" class="menu-bar">
+
+      <a href="goodsReturnHome.html" id="back" class="hvr-icon-back">
+        <i class="fas fa-arrow-circle-left hvr-icon" aria-hidden="true"></i>
+        <br>
+        BACK
+      </a> 
+
+      <a id="new" href="goodsReturnNew.html" class="hvr-icon-pulse-grow">
+        <i class="fas fa-plus-square hvr-icon" aria-hidden="true"></i>
+        <br>
+        NEW
+      </a> 
+
+      <a id="update" href="goodsReturnUpdate.html" class="hvr-icon-pulse-grow">
+          <i class="fas fa-edit hvr-icon" aria-hidden="true"></i>
+          <br>
+          UPDATE
+      </a>
+
+      <a id="delete" href="goodsReturnDelete.html" class="hvr-icon-pulse-grow">
+          <i class="fas fa-trash hvr-icon" aria-hidden="true"></i>
+          <br>
+          DELETE
+      </a>
+
+      <a id="db" href="goodsReturnDatabase.html" class="hvr-icon-pulse-grow">
+          <i class="fas fa-database hvr-icon" aria-hidden="true"></i>
+          <br>
+          COLLECTION
+      </a>
+
+
+    </div>
+
+    <!--HEADING-->
+    <div id=top>
+
+      <h1 id=topHeading>
+
+        NEW GOODS RETURN 
+
+      </h1>
+    
+    </div>
+
+    <div id="mySidenavLeft">
+
+      <a href="#" style="top:100px;" id="ai" onclick="addItem()"><i class="fas fa-plus-square"></i>&nbsp;ADD INVOICE</a>
+      
+    </div>
+
+    <div id="mySidenavRight">
+
+      <a href="#" style="top:100px;" id="di" onclick="deleteItem()"><i class="fas fa-trash"></i>&nbsp;DELETE INVOICE</a>
+      
+    </div>
+
+    <!--FORM-->
+    <div>
+      
+      <form id="forme" spellcheck="false" >       
+
+        <table>    
+          
+          <tr>
+
+            <td>
+              <span>
+                SERIAL NO.
+              </span>
+              <br>
+              <input type="number" step="any" id="serialNo" placeholder = "Serial No." autocomplete="off" autofocus onfocusout="checkForGoodsReturn()" min=1 required>
+            </td>
+
+            <td>
+              <span>
+                DATE
+              </span>
+              <br>
+              <input type="date" id="date" autocomplete="off" required>
+            </td>
+
+            <td>
+              <span>
+              CUSTOMER
+              </span>
+              <br>
+              <input list="customers" style="width: 100%;" type="text" id="customer" placeholder ="CUSTOMER"  onfocus="showCustomers()" onfocusout="checkCustomer()" onchange="deleteAllItems()" autocomplete="off" required>
+              <datalist id="customers"></datalist>
+            </td>
+
+            <td>
+              <span>
+              SUPPLIER
+              </span>
+              <br>
+              <input list="suppliers" style="width: 100%;" type="text" id="supplier" placeholder ="SUPPLIER"  onfocus="showSuppliers()" onfocusout="checkSupplier()" onchange="deleteAllItems()" autocomplete="off" required>
+              <datalist id="suppliers"></datalist>
+            </td>
+            
+          </tr>
+
+        </table>
+        
+        <table>
+
+          <tr>
+
+            <td>
+              <span>
+                CREDIT NOTE NO.
+              </span>
+              <br>
+              <input type="number" step="any" min=1 id="cNo" placeholder="CREDIT NOTE NUMBER" autocomplete="off">
+            </td>
+            
+            <td>
+              <span>
+               DEBIT NOTE NO.
+              </span>
+              <br>
+              <input type="number" step="any" min=1 id="dNo" placeholder="DEBIT NOTE NUMBER" autocomplete="off">
+            </td>
+
+            <td>
+              <span>
+                AGENT's G.R. NO.
+              </span>
+              <br>
+              <input type="number" step="any" min=1 id="agrNo" placeholder = "AGENT's G.R. NO" autocomplete="off">
+            </td>
+
+          </tr>
+
+        </table> 
+        
+        <table id=items>
+          
+          <caption style="font-family: Open Sans;font-weight: 900;font-size: 17.5px;">INVOICES</caption>
+
+          <tr class="List">
+
+            <th style="font-size: 17.5px;width:4.09%"">
+              <span>
+                #
+              </span>
+            </th>
+
+            <th style="font-size: 17.5px;">
+              <span>
+                INVOICE NO
+              </span>
+            </th>            
+
+            <th style="font-size: 17.5px;">
+              <span>
+                INVOICE AMOUNT
+              </span>
+            </th>
+
+            <th style="font-size: 17.5px;">
+              <span>
+                DUE AMOUNT
+              </span>
+            </th>
+
+            <th style="font-size: 17.5px;">
+              <span>
+                TAXABLE G.R.
+              </span>
+            </th>
+
+            <th style="font-size: 17.5px;width:4.09%">
+              <span>
+                GST %
+              </span>
+            </th>
+
+            <th style="font-size: 17.5px;">
+              <span>
+                GST AMOUNT
+              </span>
+            </th>
+
+            <th style="font-size: 17.5px;">
+              <span>
+                TOTAL G.R.
+              </span>
+            </th>
+
+            <th style="font-size: 17.5px;">
+              <span>
+                L.R. NO.
+              </span>
+            </th>
+
+            <th style="font-size: 17.5px;">
+              <span>
+                L.R. DATE
+              </span>
+            </th>
+
+            <th style="font-size: 17.5px;width : 15.09%">
+              <span>
+                TRANSPORTER
+              </span>
+            </th>
+
+            <th style="font-size: 17.5px;width:9.09%">
+              <span>
+                STATUS
+              </span>
+            </th>
+
+          </tr>
+
+        </table>        
+        
+        <table>
+  
+          <!--ADDRESS-->
+          <tr id="address">
+
+            <td>  
+              <span>
+                TOTAL
+              </span>
+            </td>
+
+          </tr>
+
+        </table>  
+
+        <table>
+
+          <tr>
+
+            <td>
+              <span>
+                TAXABLE G.R.
+              </span>
+              <br>
+              <input type="number" step="any" min=1 id="tta" placeholder="TAXABLE AMOUNT" autocomplete="off" disabled required>
+            </td>
+            
+            <td>
+              <span>
+               GST AMOUNT
+              </span>
+              <br>
+              <input type="number" step="any" min=1 id="tax" placeholder="GST AMOUNT" autocomplete="off" disabled required>
+            </td>
+
+            <td>
+              <span>
+               TOTAL G.R.  
+              </span>
+              <br>
+              <input type="number" step="any" min=1 id="tgra" placeholder = "G.R. AMOUNT" autocomplete="off" disabled required>
+            </td>
+
+          </tr>
+
+        <table>
+
+          <tr>
+
+            <td>
+              <span>
+                REMARKS
+              </span>
+              <br>
+              <input style="width: 67%;text-transform: none;" type="text" id="remarks" placeholder="Remarks If Any.." autocomplete="off"> 
+            </td>
+
+          </tr>
+
+        </table>
+
+        <!--SUBMIT BUTTON-->
+        <br><br>
+        <div style="text-align: center">
+          <input type="submit" id="submitButton" class = "btn" value="SUBMIT">
+          <input type="button" id="printButton" class = "btn" onfocusout="rl()" value="PRINT" disabled>
+        </div>        
+
+      </form>
+
+    </div>
+
+    <div id="snackbar"></div>
+    
+    <script src="goodsReturnNew.js"></script>
+    <script src="goodsReturn.js"></script>
+
+  </body>
+  
+</html>

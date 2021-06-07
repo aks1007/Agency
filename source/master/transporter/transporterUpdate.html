@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+
+    <meta charset="UTF-8" content="width=device-width, initial-scale=1"> 
+    
+<title>AGENCY by TANTRA </title>  
+
+    <!--CSS-->    
+    <link rel="stylesheet" href="../../../node_modules/@fortawesome/fontawesome-free/css/all.css">                        
+    <link rel="stylesheet" href="../../../assets/css/menu.css">   
+    <link rel="stylesheet" href="../../../assets/css/input.css">
+    <link rel="stylesheet" href="../../../assets/css/hover.css">  
+    <link rel="stylesheet" href="../../../assets/fonts/OpenSans.css">
+    <link rel="stylesheet" href="../../../assets/fonts/Fredoka-One.css">
+    <link rel="stylesheet" href="../../../assets/fonts/Orbitron.css">
+    
+  </head>
+
+  <body  onkeydown="shortCuts(event)">
+
+    <!--MENU-->
+    
+    <div class="menu-bar">
+
+      <a href="transporterHome.html" id="back" class="hvr-icon-back">
+        <i class="fas fa-arrow-circle-left hvr-icon" aria-hidden="true"></i>
+        <br>
+        BACK
+      </a> 
+
+      <a id="new" href="transporterNew.html" class="hvr-icon-pulse-grow">
+        <i class="fas fa-plus-square hvr-icon" aria-hidden="true"></i>
+        <br>
+        NEW
+      </a> 
+
+      <a id="view" href="transporterUpdate.html" class="hvr-icon-pulse-grow">
+          <i class="fas fa-search hvr-icon" aria-hidden="true"></i>
+          <br>
+          UPDATE
+      </a>
+
+      <a id="delete" href="transporterDelete.html" class="hvr-icon-pulse-grow">
+          <i class="fas fa-trash hvr-icon" aria-hidden="true"></i>
+          <br>
+          DELETE
+      </a>
+
+      <a id="db" href="transporterDatabase.html" class="hvr-icon-pulse-grow">
+          <i class="fas fa-database hvr-icon" aria-hidden="true"></i>
+          <br>
+          COLLECTION
+      </a>
+
+
+    </div>
+
+    <!--HEADING-->
+    <div id=top>
+
+      <h1 id=topHeading>
+
+        UPDATE TRANSPORTER
+
+      </h1>
+    
+    </div>
+
+    <!--FORM-->
+    <div>
+      
+      <form  id="forme" action="#" spellcheck="false">       
+
+        <table>    
+
+          <!--GENERAL DETAILS-->
+          <tr>
+
+            <td colspan="4">
+              <span>
+              TRANSPORTER
+              </span>
+              <br>
+              <input style="width: 25%;" list="transporters" type="text" id="transporter" placeholder ="TRANSPORTER" autocomplete="off" required autofocus>
+              <datalist id="transporters"></datalist>
+            </td>
+
+          </tr>
+          
+          <tr>
+
+            <td>
+              <span>
+              NEW TRANSPORTER
+              </span>
+              <br>
+              <input type="text" id="newTransporter" placeholder ="NEW TRANSPORTER" autocomplete="off" required disabled>
+            </td>
+
+            <td>
+              <span>
+              EMAIL ID
+              </span>
+              <br>
+              <input style="width: 100%;" type="email" id="emailId" placeholder ="EMAIL ID" autocomplete="off" disabled>
+            </td>
+
+            <td>
+              <span>
+              PHONE NO.
+              </span>
+              <br>
+              <input style="width: 100%;" type="number" id="phoneNo" placeholder ="PHONE NO" autocomplete="off" disabled>
+            </td>
+
+            <td>
+              <span>
+              REMARKS
+              </span>
+              <br>
+              <input type="text" id="remarks" placeholder ="Remarks if any..." autocomplete="off" disabled>
+            </td>
+
+          </tr> 
+
+          <!--ADDRESS-->
+          <tr id="address">
+
+            <td colspan="4">   
+              <span>
+                ADDRESS
+              </span>
+            </td>
+
+          </tr>
+
+        </table>  
+
+        <table>  
+          <tr style="border-top: none;border-bottom: none;">
+
+            <td class="column20">
+              <span>
+                LINE 1
+              </span>
+              <br>
+              <input type="text" id="line1" placeholder ="ADDRESS LINE 1" autocomplete="off" disabled>
+            </td>
+
+            <td class="column20">
+              <span>
+                LINE 2
+              </span>
+              <br>
+              <input type="text" id="line2" placeholder ="ADDRESS LINE 2" autocomplete="off" disabled>
+            </td>
+
+            <td class="column20">
+              <span>
+                CITY
+              </span>
+              <br>
+              <input list="cities" type="text" id="city" placeholder ="CITY" autocomplete="off" disabled>
+              <datalist id="cities"></datalist>
+            </td>
+
+            <td class="column20">
+              <span>
+                STATE
+              </span>
+              <br>
+              <input type="text" id="state" placeholder ="STATE" autocomplete="off" disabled>
+            </td>
+
+            <td class="column20">
+              <span>
+                PIN CODE
+              </span>
+              <br>
+              <input type="number" id="pinCode" placeholder ="PIN CODE" autocomplete="off" disabled>
+            </td>
+
+          </tr> 
+        </table>
+
+        <!--SUBMIT BUTTON-->
+        <br><br>
+        <div style="text-align: center">
+          <input type="submit" id="submitButton" class = "btn" value="UPDATE" disabled>
+        </div>        
+
+      </form>
+
+    </div>
+
+    <div id="snackbar"></div>
+
+    <script src="transporterUpdate.js"></script>
+    <script src="transporter.js"></script>
+
+  </body>
+  
+</html>

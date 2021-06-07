@@ -1,0 +1,240 @@
+/*LIGHT-THEME*/
+body[data-theme='light']
+{
+  --border-color : #000;
+  --heading : #3700B3;
+  --on-heading : #fff;
+  --row-hover : #3700B3;
+  --on-row-hover : #fff;
+  --even-row-color : #6200EE;
+  --on-even-row : #fff;
+  --odd-row-color : #fff;
+  --on-odd-row : #000;  
+
+  --primary-color : #6200EE;
+  --primary-variant-color : #3700B3;
+  --secondary-color : #03DAC6;
+  --message-color : #B00020;
+  --background-color : #FFF;
+  --surface-color : #FFF;
+  --on-primary : #FFF;
+  --on-primary-variant : #FFF;
+  --on-secondary : #000;
+  --on-background : #000;
+  --on-surface : #000;
+  --on-message : #FFF;
+  --top-heading : #6200EE;
+  --top-heading-text : #FFF;
+}
+
+/*TRICOLOR-THEME*/
+body[data-theme='tricolor']
+{
+  --border-color : #000;
+  --heading : #000080; 
+  --on-heading : #FF9933;
+  --row-hover : #000080;
+  --on-row-hover : #FF9933;
+  --even-row-color : #138808;
+  --on-even-row : #fff;
+  --odd-row-color : #FF9933;
+  --on-odd-row : #000;
+
+  --primary-color : #138808;
+  --primary-variant-color : #000080;
+  --secondary-color : #03DAC6;
+  --message-color : #B00020;
+  --background-color : #FFF;
+  --surface-color : #FF9933;
+  --on-primary : #fff;
+  --on-primary-variant : #fff;
+  --on-secondary : #000;
+  --on-background : #000;
+  --on-surface : #000;
+  --on-message : #fff;
+  --top-heading : #138808;
+  --top-heading-text : #fff;
+}
+
+/*CLASSIC-THEME*/
+body[data-theme='classic']
+{
+  --border-color : #000;
+  --heading : #F65058;
+  --on-heading : #28334A;
+  --row-hover : #F65058;
+  --on-row-hover : #28334A;
+  --even-row-color : #FBDE44;
+  --on-even-row : #28334A;
+  --odd-row-color : #28334A;
+  --on-odd-row : #fff;
+
+  --primary-color : #FBDE44;
+  --primary-variant-color : #F65058;
+  --secondary-color : #28334A;
+  --message-color : #F65058;
+  --background-color : #888888;
+  --surface-color : #28334A;
+  --on-primary : #28334A;
+  --on-primary-variant : #fff;
+  --on-secondary : #FFF;
+  --on-background : #28334A;
+  --on-surface : #F65058;
+  --on-message : #fff;
+  --top-heading :#FBDE44;
+  --top-heading-text :#28334A;
+}
+
+/*DARK-THEME*/
+body[data-theme='dark']
+{
+  --border-color : #fff;
+  --heading : #3700B3;
+  --on-heading : #BB86FC;
+  --row-hover : #3700B3;
+  --on-row-hover : #BB86FC;
+  --even-row-color : #BB86FC;
+  --on-even-row : #000;
+  --odd-row-color : #1F1A24;
+  --on-odd-row : #fff;
+
+  --primary-color : #BB86FC;
+  --primary-variant-color : #3700B3;
+  --secondary-color : #03DAC6;
+  --message-color : #CF6679;
+  --background-color : #121212;
+  --surface-color : #1F1A24;
+  --on-primary : #000;
+  --on-primary-variant : #fff;
+  --on-secondary : #000;
+  --on-background : #fff;
+  --on-surface : #fff;
+  --on-message : #000;
+  --top-heading : transparent;
+  --top-heading-text : #BB86FC;
+}
+
+/*TOP-HEADING*/
+#top
+{
+    text-align: center;
+    background: var(--top-heading);
+    transition: all 0.3s ease-in-out;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-top: 0px;
+    width : 100%;
+}
+
+/*TOP-HEADING-TEXT*/
+#companyName
+{
+  color: var(--top-heading-text);
+  font-family: 'Fredoka One';
+  font-size: 37.5px;
+  margin : 0;
+}
+
+#address 
+{
+  color: var(--top-heading-text);
+  font-family: 'Open Sans', serif;
+  font-size: 12.5px;
+  margin : 0;
+}
+
+#phoneNo 
+{
+  color: var(--top-heading-text);
+  font-family: 'Open Sans', serif;
+  font-size: 12.5px;
+  margin : 0;
+}
+
+#telephoneNo 
+{
+  color: var(--top-heading-text);
+  font-family: 'Open Sans', serif;
+  font-size: 12.5px;
+  margin : 0;
+}
+
+#gstin 
+{
+  color: var(--top-heading-text);
+  font-family: 'Open Sans', serif;
+  font-size: 12.5px;
+  margin : 0;
+}
+
+#pan 
+{
+  color: var(--top-heading-text);
+  font-family: 'Open Sans', serif;
+  font-size: 12.5px;
+  margin : 0;
+}
+
+#heading
+{
+  color: var(--top-heading-text);
+  font-family: 'Orbitron';
+  font-size: 25px;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+body
+{
+  background: var(--background-color);
+  overflow: hidden;
+  margin : 15px;
+}
+
+/* TABLE-HEADING */
+th
+{
+  padding: 5px;
+  text-align: center;
+  font-family: 'Comfortaa';
+  font-weight: 900; 
+  color: var(--on-heading);
+  font-size: 15px;
+}
+
+/* TABLE-FIELD */
+td
+{
+  text-align: center;
+}
+
+/* SPAN */
+span
+{
+  color: var(--on-background);
+  padding : 1px;
+  font-family: 'Comfortaa';
+  font-size: 12px;
+}
+
+/*TABLE*/
+table
+{
+  width: 100%;
+  display: inline-table;
+}
+
+.field
+{
+  font-weight: 900;
+  font-size: 15px;
+}
+
+footer
+{
+  position : fixed;
+  bottom: 0;
+  right: 5%;
+}

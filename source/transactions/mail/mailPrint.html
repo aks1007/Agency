@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+
+    <meta charset="UTF-8" content="width=device-width, initial-scale=1"> 
+    
+<title>AGENCY by TANTRA </title>
+
+    <!--CSS-->    
+    <link rel="stylesheet" href="../../../node_modules/@fortawesome/fontawesome-free/css/all.css"> 
+    <link rel=stylesheet href="../../../assets/css/print.css">
+    <link rel="stylesheet" href="../../../assets/fonts/OpenSans.css">
+    <link rel="stylesheet" href="../../../assets/fonts/Fredoka-One.css">
+    <link rel="stylesheet" href="../../../assets/fonts/Orbitron.css">
+    <link rel="stylesheet" href="../../../assets/fonts/Comfortaa.css">
+     
+  </head>
+
+  <body>
+
+    <div id=top style="margin-top: 0">
+
+      <table>
+
+        <tr>
+          <td>
+            <p id=companyName></p>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <p id=address></p>
+          </td>
+        </tr> 
+      </table>
+      
+      <table>
+        <tr>
+          <td  style="text-align: center;width: 30%;">
+            <span id=phoneNo></span>
+            <br>
+            <span id=telephoneNo></span>
+          </td>
+          <td style="text-align: center; width: 30%;">
+            <span id=gstin></span>
+            <br>
+            <span id=pan></span>
+          </td>
+        </tr>
+      </table>
+    
+    </div>
+
+    <br><br>
+
+    <div id=top>
+
+      <h1 id="heading">
+
+        MAIL
+
+      </h1>
+    
+    </div>
+
+    <br><br>
+
+    <!--FORM-->
+    <div>
+      
+      <!--FORM-->
+    <div>
+      
+      <form id="forme"  action="#" method="post" spellcheck="false" >       
+
+        <table>    
+
+          <!--GENERAL DETAILS-->
+
+          <tr>
+
+            <td>
+              <span class="field">
+               MAIL NO.
+              </span>
+              <br>
+              <span id="mailNo"></span>
+            </td>
+
+            <td>
+              <span class="field">
+               DATE
+              </span>
+              <br>
+              <span id="date"></span>
+            </td>
+
+            <td>
+              <span class="field">
+               FROM
+              </span>
+              <br>
+              <span id="sender"></span>
+            </td>
+
+            <td>
+              <span class="field">
+                TO
+              </span>
+              <br>
+              <span id="receiver"></span>
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td>
+              <span class="field">
+                IN/OUT
+              </span>
+              <br>
+              <span id="io"></span>
+            </td>
+
+            <td>
+              <span class="field">
+                POSTAL SERVICE
+              </span>
+              <br>
+              <span id="post"></span>
+            </td>
+
+            <td>
+              <span class="field">
+                TRACKING ID
+              </span>
+              <br>
+              <span id="tid"></span>
+            </td>
+
+            <td>
+              <span class="field">
+                CONTENTS
+              </span>
+              <br>
+              <span id="content"></span>
+            </td>
+
+          </tr>
+
+        </table>
+        
+        <br>
+
+        <table id="cheque" style="display: none;">         
+          
+          <caption style="font-family: Comfortaa;font-weight: 900;">CHEQUES</caption>
+          <tr>
+
+            <th>
+              <span style="font-size: 15px;">
+                #
+              </span>
+            </th>
+
+            <th>
+              <span style="font-size: 15px;">
+                NO.
+              </span>
+            </th>
+
+            <th>
+              <span style="font-size: 15px;">
+                DATE
+              </span>
+            </th>
+
+            <th>
+              <span style="font-size: 15px;">
+                BANK
+              </span>
+            </th>
+
+            <th>
+              <span style="font-size: 15px;">
+                AMOUNT
+              </span>
+            </th>
+
+          </tr>
+
+        </table>
+
+        <br><br>
+
+        <table>
+
+          <tr>
+
+            <td>
+              <span class="field">
+                REMARKS : 
+              </span>
+              <span id=remarks></span>
+            </td>
+
+          </tr>
+
+        </table>
+
+        <!--SUBMIT BUTTON-->
+        <br><br>
+        <div style="text-align: center">
+          <input type="submit" id="submitButton" class = "btn" value="PRINT" style="visibility: hidden">
+        </div>        
+
+      </form>      
+
+      <footer>
+        <span style="border-top: 1px solid black;">AUTHORISED SIGNATORY</span>
+      </footer>
+
+    </div>
+    
+    <script src="mailPrint.js"></script>
+
+  </body>
+  
+</html>

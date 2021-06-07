@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+
+    <meta charset="UTF-8" content="width=device-width, initial-scale=1"> 
+    
+<title>AGENCY by TANTRA </title>
+
+    <!--CSS-->    
+    <link rel="stylesheet" href="../../../node_modules/@fortawesome/fontawesome-free/css/all.css"> 
+    <link rel=stylesheet href="../../../assets/css/print.css">
+    <link rel="stylesheet" href="../../../assets/fonts/OpenSans.css">
+    <link rel="stylesheet" href="../../../assets/fonts/Fredoka-One.css">
+    <link rel="stylesheet" href="../../../assets/fonts/Orbitron.css">
+    <link rel="stylesheet" href="../../../assets/fonts/Comfortaa.css">
+     
+  </head>
+
+  <body>
+
+    <div id=top style="margin-top: 0">
+
+      <table>
+
+        <tr>
+          <td>
+            <p id=companyName></p>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <p id=address></p>
+          </td>
+        </tr> 
+      </table>
+      
+      <table>
+        <tr>
+          <td  style="text-align: center;width: 30%;">
+            <span id=phoneNo></span>
+            <br>
+            <span id=telephoneNo></span>
+          </td>
+          <td style="text-align: center; width: 30%;">
+            <span id=gstin></span>
+            <br>
+            <span id=pan></span>
+          </td>
+        </tr>
+      </table>
+    
+    </div>
+
+    <div id=top>
+
+      <h1 id="heading">
+
+        INVOICE
+
+      </h1>
+    
+    </div>
+      
+      <!--FORM-->
+    <div>
+      
+      <form id="forme" spellcheck="false" >       
+
+        <table style="border: 1px solid black;">    
+          
+          <tr>
+
+            <td style="width:25%;text-align: center;">
+              <span class="field">
+                SERIAL NO.
+              </span>
+              <br>
+              <span id=serialNo></span>
+            </td>
+
+            <td style="width:25%;text-align: center;">
+              <span class="field">
+                INVOICE NO.
+              </span>
+              <br>
+              <span id=billNo></span>
+            </td>
+
+            <td style="width:25%;text-align: center;">
+              <span class="field">
+                ENTRY NO.
+              </span>
+              <br>
+              <span id=entryNo></span>
+            </td>
+
+            <td style="width:25%;text-align: center;">
+              <span class="field">
+                ORDER NO.
+              </span>
+              <br>
+              <span id=orderNo></span>
+            </td>
+            
+          </tr>
+
+          <tr>   
+            
+            <td>
+              <span class="field">
+                DATE
+              </span>
+              <br>
+              <span id=date></span>
+            </td>
+
+            <td>
+              <span class="field">
+                SUB AGENT
+              </span>
+              <br>
+              <span id=subAgent></span>
+            </td>
+
+            <td>
+              <span class="field">
+                CUSTOMER
+              </span>
+              <br>
+              <span id=customer></span>
+            </td>
+
+            <td>
+              <span class="field">
+              SUPPLIER
+              </span>
+              <br>
+              <span id=supplier></span>
+            </td>
+
+          </tr> 
+        
+        </table> 
+        
+        <table style="border: 1px solid black;">
+
+          <tr>
+            
+            <td style="width:40%;text-align: center;">
+              <span class="field">
+               TRANSPORTER
+              </span>
+              <br>
+              <span id=transporter></span>
+            </td>
+
+            <td style="width:20%;text-align: center;">
+              <span class="field">
+               DESTINATION
+              </span>
+              <br>
+              <span id=destination></span>
+            </td>
+
+            <td style="width:15%;text-align: center;">
+              <span class="field">
+               CASES
+              </span>
+              <br>
+              <span id=cases></span>
+            </td>
+
+            <td style="width:15%;text-align: center;">
+              <span class="field">
+               L.R. NO.
+              </span>
+              <br>
+              <span id=lrNo></span>
+            </td>
+
+            <td style="width:20%;text-align: center;">
+              <span class="field">
+               L.R. DATE
+              </span>
+              <br>
+              <span id=lrDate></span>
+            </td>
+
+          </tr>
+
+        </table> 
+
+        <br><br>
+        
+        <table style="border: 2px solid black;" id=items class=content disabled>
+          
+          <caption style="font-family: Open Sans;font-weight: 900;font-size: 15px;">ITEMS</caption>
+
+          <tr class="List">
+
+            <th style="font-size: 15px;">
+              <span>
+                #
+              </span>
+            </th>
+
+            <th style="font-size: 15px;">
+              <span>
+                ITEM NAME
+              </span>
+            </th>
+
+            <th style="font-size: 15px;">
+              <span>
+                HSN CODE
+              </span>
+            </th>
+
+            <th style="font-size: 15px;">
+              <span>
+                PCS
+              </span>
+            </th>
+
+            <th style="font-size: 15px;">
+              <span>
+                CUT
+              </span>
+            </th>
+
+            <th style="font-size: 15px;">
+              <span>
+                MTS
+              </span>
+            </th>
+
+            <th style="font-size: 15px;">
+              <span>
+                RATE
+              </span>
+            </th>
+
+            <th style="font-size: 15px;width: 11.1%;">
+              <span>
+                UNIT
+              </span>
+            </th>
+
+            <th style="font-size: 15px;">
+              <span>
+                AMOUNT
+              </span>
+            </th>
+
+          </tr>
+
+        </table>
+
+        <br><br>
+
+        <table style="border: 1px solid black;">
+
+          <tr>
+
+            <td>
+              <span class="field">
+               CUMULATIVE AMOUNT :
+              </span>
+              <span id=ca></span>
+            </td>
+
+          </tr>
+
+        </table>
+
+        <table style="border: 1px solid black;">    
+          
+          <tr>
+
+            <td style="width:33.33%;text-align: center;">
+              <span class="field">
+                PACKAGING CHARGES
+              </span>
+              <br>
+              <span id=pcP></span>
+              <span id=pc></span>
+            </td>
+
+            <td style="width:33.33%;text-align: center;">
+              <span class="field">
+                RATE DIFFERENCE
+              </span>
+              <br>
+              <span id=rdP></span>
+              <span id=rd></span>
+            </td>
+
+            <td style="width:33.33%;text-align: center;">
+              <span class="field">
+                DEDUCTION
+              </span>
+              <br>
+              <span id=ddP></span>
+              <span id=dd></span>
+            </td>
+            
+          </tr>
+
+          <tr>   
+            
+            <td style="width:33.33%;text-align: center;">
+              <span class="field">
+                DISCOUNT
+              </span>
+              <br>
+              <span id=discP></span>
+              <span id=disc></span>
+            </td>
+
+            <td style="width:33.33%;text-align: center;">
+              <span class="field">
+                SURCHARGE
+              </span>
+              <br>
+              <span id=scP></span>
+              <span id=sc></span>
+            </td>
+
+            <td style="width:33.33%;text-align: center;">
+              <span class="field">
+                SWEET LESS
+              </span>
+              <br>
+              <span id=slP></span>
+              <span id=sl></span>
+            </td>
+
+          </tr> 
+
+          <tr>
+
+            <td style="width:33.33%;text-align: center;">
+              <span class="field">
+                CGST
+              </span>
+              <br>
+              <span id=cgstP></span>
+              <span id=cgst></span>
+            </td>
+            
+            <td style="width:33.33%;text-align: center;">
+              <span class="field">
+                SGST
+              </span>
+              <br>
+              <span id=sgstP></span>
+              <span id=sgst></span>
+            </td>
+
+            <td style="width:33.33%;text-align: center;">
+              <span class="field">
+                IGST
+              </span>
+              <br>
+              <span id=igstP></span>
+              <span id=igst></span>
+            </td>
+
+          </tr>
+        
+        </table>
+
+        <table style="border: 1px solid black;">
+
+          <tr>
+
+            <td>
+              <span class="field">
+               NET AMOUNT :
+              </span>
+              <span id=netAmount></span>
+            </td>
+
+          </tr>
+
+        </table>
+
+        <table style="border: 1px solid black;text-align: left;" class=end>
+
+          <tr>
+
+            <td>
+              <span class="field">
+                REMARKS :
+              </span>
+              <span id=remarks></span> 
+            </td>
+
+          </tr>
+
+        </table>       
+
+      </form>   
+
+      <footer>
+        <span style="border-top: 1px solid black;">AUTHORISED SIGNATORY</span>
+      </footer>
+
+    </div>
+    
+    <script src="invoicePrint.js"></script>
+
+  </body>
+  
+</html>

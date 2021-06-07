@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <meta charset="UTF-8" content="width=device-width, initial-scale=1"> 
+    
+    <title>AGENCY by TANTRA </title>
+        
+        <!--CSS-->
+        <link rel="stylesheet" href="../../../node_modules/@fortawesome/fontawesome-free/css/all.css">
+        <link rel="stylesheet" href="../../../assets/css/tiles.css">
+        <link rel="stylesheet" href="../../../assets/css/hover.css">
+        <link rel="stylesheet" href="../../../assets/fonts/Orbitron.css">
+        <link rel="stylesheet" href="../../../assets/fonts/Fredoka-One.css">
+
+    </head>
+
+      <body  onkeydown="shortCuts(event)">
+
+        <!--MENU-->    
+        <div class="menu-bar" style="box-shadow: 0px 0px;background : transparent">
+
+            <a href="#" id="quit" style="float : right;width : 25px;height: 25px;margin : 20px;padding : 0" class="hvr-pulse">
+                <i style="font-size : 25px" class="fas fa-window-close" aria-hidden="true"></i>
+            </a>  
+    
+        </div>
+         
+        <!--AGENCY NAME-->
+        <div id="top">        
+           <h1 id="topHeading">               
+               LOCATION
+           </h1>             
+        </div>
+
+        <br><br>
+
+        <!--MENU-->
+        <div class="options">
+
+            <a id="locationNew" href="locationNew.html" class="hvr-icon-pulse-grow">
+                <i class="fas fa-plus-square hvr-icon" aria-hidden="true"></i>
+                <br>
+                NEW
+            </a> 
+    
+            <a id="locationUpdate" href="locationUpdate.html" class="hvr-icon-pulse-grow">
+                <i class="fas fa-search hvr-icon" aria-hidden="true"></i>
+                <br>
+                UPDATE
+            </a>
+
+            <br>
+    
+            <a id="locationDelete" href="locationDelete.html" class="hvr-icon-pulse-grow">
+                <i class="fas fa-trash hvr-icon" aria-hidden="true"></i>
+                <br>
+                DELETE
+            </a>
+
+            <a id="locationDatabase" href="locationDatabase.html" class="hvr-icon-pulse-grow">
+                <i class="fas fa-database hvr-icon" aria-hidden="true"></i>
+                <br>
+                COLLECTION
+            </a>
+
+        </div>
+        
+        <script src="locationHome.js"></script>
+        
+    </body>
+
+</html>

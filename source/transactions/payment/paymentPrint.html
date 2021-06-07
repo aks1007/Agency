@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+
+    <meta charset="UTF-8" content="width=device-width, initial-scale=1"> 
+    
+<title>AGENCY by TANTRA </title>
+
+    <!--CSS-->    
+    <link rel="stylesheet" href="../../../node_modules/@fortawesome/fontawesome-free/css/all.css"> 
+    <link rel=stylesheet href="../../../assets/css/print.css">
+    <link rel="stylesheet" href="../../../assets/fonts/OpenSans.css">
+    <link rel="stylesheet" href="../../../assets/fonts/Fredoka-One.css">
+    <link rel="stylesheet" href="../../../assets/fonts/Orbitron.css">
+    <link rel="stylesheet" href="../../../assets/fonts/Comfortaa.css">
+     
+  </head>
+
+  <body>
+
+    <div id=top style="margin-top: 0">
+
+      <table>
+
+        <tr>
+          <td>
+            <p id=companyName></p>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <p id=address></p>
+          </td>
+        </tr> 
+      </table>
+      
+      <table>
+        <tr>
+          <td  style="text-align: center;width: 30%;">
+            <span id=phoneNo></span>
+            <br>
+            <span id=telephoneNo></span>
+          </td>
+          <td style="text-align: center; width: 30%;">
+            <span id=gstin></span>
+            <br>
+            <span id=pan></span>
+          </td>
+        </tr>
+      </table>
+    
+    </div>
+
+    <div id=top>
+
+      <h1 id="heading">
+
+        PAYMENT
+
+      </h1>
+    
+    </div>
+      
+      <!--FORM-->
+    <div>
+      
+      <form id="forme" spellcheck="false" >       
+
+        <table>    
+          
+          <tr>
+
+            <td>
+              <span class="field">
+                VOUCHER NO
+              </span>
+              <br>
+              <span id=serialNo></span>
+            </td>
+
+            <td>
+              <span class="field">
+                DATE
+              </span>
+              <br>
+              <span id=date></span>
+            </td>
+
+            <td>
+              <span class="field">
+              CUSTOMER
+              </span>
+              <br>
+              <span id=customer></span>
+            </td>
+
+            <td>
+              <span class="field">
+              SUPPLIER
+              </span>
+              <br>
+              <span id=supplier></span>
+            </td>
+            
+          </tr>
+
+        </table> 
+
+        <br><br>
+
+        <table id=cheques class=content disabled>
+          
+          <caption style="font-family: Open Sans;font-weight: 900;font-size: 15px;">CHEQUES</caption>
+
+          <tr class="List">
+
+            <th style="font-size: 15px;">
+              <span>
+                #
+              </span>
+            </th>
+
+            <th style="font-size: 15px;">
+              <span>
+                CHEQUE NO
+              </span>
+            </th>
+
+            <th style="font-size: 15px;">
+              <span>
+                CHEQUE AMOUNT
+              </span>
+            </th>
+
+            <th style="font-size: 15px;">
+              <span>
+                BANK
+              </span>
+            </th>
+
+            <th style="font-size: 15px;">
+              <span>
+                CHEQUE AMOUNT
+              </span>
+            </th>
+
+          </tr>
+
+        </table>
+
+        <br><br>
+
+        <table id=fts class=content disabled>
+          
+          <caption style="font-family: Open Sans;font-weight: 900;font-size: 15px;">FUND TRANSFERS</caption>
+
+          <tr class="List">
+
+            <th style="font-size: 15px;">
+              <span>
+                #
+              </span>
+            </th>
+
+            <th style="font-size: 15px;">
+              <span>
+                UTR NO
+              </span>
+            </th>
+
+            <th style="font-size: 15px;">
+              <span>
+                FT DATE
+              </span>
+            </th>
+
+            <th style="font-size: 15px;">
+              <span>
+                BANK
+              </span>
+            </th>
+
+            <th style="font-size: 15px;">
+              <span>
+                FT AMOUNT
+              </span>
+            </th>
+
+          </tr>
+
+        </table>
+
+        <br><br>
+        
+        <table id=items class=content disabled>
+          
+          <caption style="font-family: Open Sans;font-weight: 900;font-size: 15px;">ITEMS</caption>
+
+          <tr class="List">
+
+            <th style="font-size: 15px;">
+              <span>
+                #
+              </span>
+            </th>
+
+            <th style="font-size: 15px;">
+              <span>
+                INVOICE NO
+              </span>
+            </th>
+
+            <th style="font-size: 15px;">
+              <span>
+                INVOICE AMOUNT
+              </span>
+            </th>
+
+            <th style="font-size: 15px;">
+              <span>
+                DUE DAYS
+              </span>
+            </th>
+
+            <th style="font-size: 15px;">
+              <span>
+                G.R.L.
+              </span>
+            </th>
+
+            <th style="font-size: 15px;">
+              <span>
+                R.D.
+              </span>
+            </th>
+
+            <th style="font-size: 15px;">
+              <span>
+                PACK.
+              </span>
+            </th>
+
+            <th style="font-size: 15px;width: 11.1%;">
+              <span>
+                CLAIM
+              </span>
+            </th>
+
+            <th style="font-size: 15px;">
+              <span>
+                DISC.
+              </span>
+            </th>
+
+            <th style="font-size: 15px;">
+              <span>
+                INT.
+              </span>
+            </th>
+
+            <th style="font-size: 15px;">
+              <span>
+                OTHER
+              </span>
+            </th>
+            
+            <th style="font-size: 15px;">
+              <span>
+                PAID
+              </span>
+            </th>
+
+            <th style="font-size: 15px;">
+              <span>
+                STATUS
+              </span>
+            </th>
+
+          </tr>
+
+        </table>
+
+        <br><br>
+          
+        <table>
+
+          <tr>            
+
+            <td>
+              <span class="field">
+                PAYMENT AMOUNT
+              </span>
+              <br>
+              <span id=ta></span>
+            </td>
+
+            <td>
+              <span class="field">
+                BROKERAGE PERCENTAGE
+              </span>
+              <br>
+              <span id=brokP></span>
+            </td>
+            
+            <td>
+              <span class="field">
+                BROKERAGE AMOUNT
+              </span>
+              <br>
+              <span id=brok></span>
+            </td>
+
+          </tr>
+
+        </table>
+
+        <br><br>
+
+        <table class=end>
+
+          <tr>
+
+            <td>
+              <span class="field">
+                REMARKS :
+              </span>
+              <span id=remarks></span> 
+            </td>
+
+          </tr>
+
+        </table>       
+
+      </form>   
+
+      <footer>
+        <span style="border-top: 1px solid black;">AUTHORISED SIGNATORY</span>
+      </footer>
+
+    </div>
+    
+    <script src="paymentPrint.js"></script>
+
+  </body>
+  
+</html>

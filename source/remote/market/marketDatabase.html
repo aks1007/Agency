@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+
+    <meta charset="UTF-8" content="width=device-width, initial-scale=1"> 
+    
+<title>AGENCY by TANTRA </title>   
+
+    <!--CSS-->
+    <link rel="stylesheet" href="../../../node_modules/@fortawesome/fontawesome-free/css/all.css">
+    <link rel="stylesheet" href="../../../assets/css/database.css">
+    <link rel="stylesheet" href="../../../assets/css/hover.css">  
+    <link rel="stylesheet" href="../../../assets/fonts/Alegreya.css">
+    <link rel="stylesheet" href="../../../assets/fonts/Comfortaa.css">
+    <link rel="stylesheet" href="../../../assets/fonts/Fredoka-One.css">
+    <link rel="stylesheet" href="../../../assets/fonts/Orbitron.css">    
+
+  </head>
+
+  <body  onload="showDatabase()" onkeydown="shortCuts(event)">
+
+    <!--MENU-->
+    <div class="menu-bar" style="text-align:center">
+
+      <a href=# id="back" class="hvr-icon-back">
+        <i class="fas fa-arrow-circle-left hvr-icon" aria-hidden="true"></i>
+        <br>
+        BACK
+      </a> 
+
+      <a href="marketNew.html" id="new" class="hvr-icon-float-away">
+        <i class="fas fa-plus-square hvr-icon" aria-hidden="true"></i>
+        <br>
+        NEW
+      </a> 
+
+      <a href="marketUpdate.html" id="view" class="hvr-icon-float-away">
+        <i class="fas fa-search hvr-icon" aria-hidden="true"></i>
+        <br>
+        UPDATE
+      </a>
+
+      <a href="marketDelete.html" id="delete" class="hvr-icon-float-away">
+        <i class="fas fa-edit hvr-icon" aria-hidden="true"></i>
+        <br>
+        DELETE
+      </a>
+
+      <a href="marketDatabase.html" id="db" class="hvr-icon-float-away">
+        <i class="fas fa-database hvr-icon" aria-hidden="true"></i>
+        <br>
+        COLLECTION
+      </a>
+
+    </div>
+
+    <div class="menu-bar" style="top: 100px;">
+      <!--HEADING-->
+      <div id=top>
+
+        <h1 id=topHeading>
+
+          MARKET DATABASE
+
+        </h1>
+      
+      </div>
+    </div>  
+
+    <div style="margin-left : 30% ; width: 40%;">
+
+      <table id="database">
+
+        <!--CITY DATABASE-->            
+        <tr style="background : transparent; border : 0px solid;">
+
+          <th style="width: 30%">
+            <span>
+              #
+            </span>
+          </th>
+
+          <th style="width: 70%">
+            <span>
+              MARKET
+            </span>
+          </th>
+                  
+        </tr> 
+
+      </table>
+
+    </div>      
+
+    <script src="marketDatabase.js"></script>
+    <script src="market.js"></script>
+
+  </body>  
+
+</html>    

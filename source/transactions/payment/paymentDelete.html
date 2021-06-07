@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+
+    <meta charset="UTF-8" content="width=device-width, initial-scale=1"> 
+    
+<title>AGENCY by TANTRA </title>   
+
+    <!--CSS-->
+    <link rel="stylesheet" href="../../../node_modules/@fortawesome/fontawesome-free/css/all.css">                               
+    <link rel="stylesheet" href="../../../assets/css/menu.css">   
+    <link rel="stylesheet" href="../../../assets/css/input.css">
+    <link rel="stylesheet" href="../../../assets/css/hover.css">  
+    <link rel="stylesheet" href="../../../assets/fonts/OpenSans.css">
+    <link rel="stylesheet" href="../../../assets/fonts/Fredoka-One.css">
+    <link rel="stylesheet" href="../../../assets/fonts/Orbitron.css">
+
+  </head>
+
+  <body  onkeydown="shortCuts(event)">
+
+    <!--MENU-->
+    <div class="menu-bar">
+
+      <a href="paymentHome.html" id="back" class="hvr-icon-back">
+        <i class="fas fa-arrow-circle-left hvr-icon" aria-hidden="true"></i>
+        <br>
+        BACK
+      </a> 
+
+      <a id="new" href="paymentNew.html" class="hvr-icon-pulse-grow">
+        <i class="fas fa-plus-square hvr-icon" aria-hidden="true"></i>
+        <br>
+        NEW
+      </a> 
+
+      <a id="update" href="paymentUpdate.html" class="hvr-icon-pulse-grow">
+          <i class="fas fa-edit hvr-icon" aria-hidden="true"></i>
+          <br>
+          UPDATE
+      </a>
+
+      <a id="delete" href="paymentDelete.html" class="hvr-icon-pulse-grow">
+          <i class="fas fa-trash hvr-icon" aria-hidden="true"></i>
+          <br>
+          DELETE
+      </a>
+
+      <a id="db" href="paymentDatabase.html" class="hvr-icon-pulse-grow">
+          <i class="fas fa-database hvr-icon" aria-hidden="true"></i>
+          <br>
+          COLLECTION
+      </a>
+
+
+    </div>
+
+    <!--HEADING-->
+    <div id=top>
+
+      <h1 id=topHeading>
+
+        PAYMENT DELETE
+
+      </h1>
+    
+    </div>
+
+    <!--FORM-->
+    <div>
+      
+      <form id="forme" spellcheck="false" >       
+
+        <table>    
+          
+          <tr>
+
+            <td>
+              <span>
+                VOUCHER NO.
+              </span>
+              <br>
+              <input type="number" step="any" id="serialNo" placeholder = "Serial No." autocomplete="off" autofocus min=1 required>
+            </td>
+
+            <td>
+              <span>
+                ENTRY NO.
+              </span>
+              <br>
+              <input type="number" step="any" min=1 id="entryNo" placeholder="ENTRY NUMBER" autocomplete="off" disabled>
+            </td>
+
+            <td>
+              <span>
+                DATE OF ENTRY
+              </span>
+              <br>
+              <input type="date" id="doe" autocomplete="off" disabled required>
+            </td>
+
+            <td>
+              <span>
+                DATE OF PAYMENT
+              </span>
+              <br>
+              <input type="date" id="dop" autocomplete="off" disabled required>
+            </td>
+            
+          </tr>
+
+        </table>
+        
+        <table>
+
+          <tr>
+
+            <td>
+              <span>
+                CUSTOMER
+              </span>
+              <br>
+              <input list="customers" style="width: 100%;" type="text" id="customer" placeholder ="CUSTOMER"  onfocus="showCustomers()" onfocusout="checkCustomer()" onchange="deleteAllItems();deleteAllGR()" autocomplete="off" disabled required>
+              <datalist id="customers"></datalist>
+            </td>
+
+            <td>
+              <span>
+                SUPPLIER
+              </span>
+              <br>
+              <input list="suppliers" style="width: 100%;" type="text" id="supplier" placeholder ="SUPPLIER"  onfocus="showSuppliers()" onfocusout="checkSupplier()" onchange="deleteAllItems();deleteAllGR()" autocomplete="off" disabled required>
+              <datalist id="suppliers"></datalist>
+            </td>
+
+            <td style="width: 24.5%;">
+              <span>
+                ADD GOODS RETURN
+              </span>
+              <br>
+              <select id="gr" disabled>
+                <option value="NO">NO</option>
+                <option value="YES">YES</option>
+              </select>
+            </td>
+
+            <td style="width: 24.5%;">
+              <span>
+                MODE OF PAYMENT
+              </span>
+              <br>
+              <select id="mop" disabled>
+                <option value="CASH">CASH</option>
+                <option value="CHEQUE">CHEQUE</option>
+                <option value="FT">FUND TRANSFER</option>
+                <option value="BOTH">CHEQUE AND FUND TRANSFER</option>
+              </select>
+            </td>
+          
+          </tr>   
+
+        </table> 
+
+        <table id=cheques style="display : none">
+          
+          <caption style="font-family: Open Sans;font-weight: 900;font-size: 17.5px;">CHEQUES</caption>
+
+          <tr class="List">
+
+            <th style="font-size: 17.5px;width:3.5%">
+              <span>
+                #
+              </span>
+            </th>
+
+            <th style="font-size: 17.5px;">
+              <span>
+                CHEQUE NO
+              </span>
+            </th>
+            
+            <th style="font-size: 17.5px;">
+              <span>
+                DATE
+              </span>
+            </th> 
+
+            <th style="font-size: 17.5px;">
+              <span>
+                BANK
+              </span>
+            </th> 
+
+            <th style="font-size: 17.5px;">
+              <span>
+                AMOUNT
+              </span>
+            </th>
+
+          </tr>
+
+        </table> 
+
+        <table id=fts style="display : none">
+          
+          <caption style="font-family: Open Sans;font-weight: 900;font-size: 17.5px;">FUND TRANSFER</caption>
+
+          <tr class="List">
+
+            <th style="font-size: 17.5px;width:3.5%">
+              <span>
+                #
+              </span>
+            </th>
+
+            <th style="font-size: 17.5px;">
+              <span>
+                UTR NO
+              </span>
+            </th>
+            
+            <th style="font-size: 17.5px;">
+              <span>
+                DATE
+              </span>
+            </th> 
+
+            <th style="font-size: 17.5px;">
+              <span>
+                BANK
+              </span>
+            </th> 
+
+            <th style="font-size: 17.5px;">
+              <span>
+                AMOUNT
+              </span>
+            </th>
+
+          </tr>
+
+        </table>
+
+        <table id=grs style="display : none">
+          
+          <caption style="font-family: Open Sans;font-weight: 900;font-size: 17.5px;">GOODS RETURN</caption>
+
+          <tr class="List">
+
+            <th style="font-size: 17.5px;width:4.09%"">
+              <span>
+                G.R. NO
+              </span>
+            </th>
+
+            <th style="font-size: 17.5px;">
+              <span>
+                INVOICE NO
+              </span>
+            </th>            
+
+            <th style="font-size: 17.5px;">
+              <span>
+                INVOICE AMOUNT
+              </span>
+            </th>
+
+            <th style="font-size: 17.5px;">
+              <span>
+                TAXABLE G.R.
+              </span>
+            </th>
+
+            <th style="font-size: 17.5px;width:4.09%">
+              <span>
+                GST %
+              </span>
+            </th>
+
+            <th style="font-size: 17.5px;">
+              <span>
+                GST AMOUNT
+              </span>
+            </th>
+
+            <th style="font-size: 17.5px;">
+              <span>
+                TOTAL G.R.
+              </span>
+            </th>
+
+            <th style="font-size: 17.5px;">
+              <span>
+                L.R. NO.
+              </span>
+            </th>
+
+            <th style="font-size: 17.5px;">
+              <span>
+                L.R. DATE
+              </span>
+            </th>
+
+            <th style="font-size: 17.5px;width : 15.09%">
+              <span>
+                TRANSPORTER
+              </span>
+            </th>
+
+            <th style="font-size: 17.5px;width:9.09%">
+              <span>
+                STATUS
+              </span>
+            </th>
+
+          </tr>
+
+        </table>
+        
+        <table>
+  
+          <!--ADDRESS-->
+          <tr id="address">
+
+            <td>  
+              <span>
+                TOTAL
+              </span>
+            </td>
+
+          </tr>
+
+        </table>  
+
+        <table>
+
+          <tr>
+
+            <td>
+              <span>
+                PAYMENT AMOUNT
+              </span>
+              <br>
+              <input type="number" step="any" min=1 id="ta" placeholder="PAYMENT AMOUNT" value=0.00 autocomplete="off" disabled required>
+            </td>
+            
+            <td>
+              <span>
+               ADJUSTED AMOUNT
+              </span>
+              <br>
+              <input type="number" step="any" min=1 id="aa" placeholder="ADJUSTED AMOUNT" autocomplete="off" disabled disabled required>
+            </td>
+
+            <td>
+              <span>
+               BALANCE AMOUNT  
+              </span>
+              <br>
+              <input type="number" step="any" min=1 id="ba" placeholder = "BALANCE AMOUNT" value=0.00 autocomplete="off" disabled disabled required>
+            </td>
+
+          </tr>
+
+        </table>      
+                
+        <table id=items>
+          
+          <caption style="font-family: Open Sans;font-weight: 900;font-size: 17.5px;">INVOICES</caption>
+
+          <tr class="List">
+
+            <th style="font-size: 17.5px;width:3.5%">
+              <span>
+                #
+              </span>
+            </th>
+
+            <th style="font-size: 17.5px;width:5%">
+              <span>
+                INVOICE NO.
+              </span>
+            </th>
+
+            <th style="font-size: 17.5px;width:5%">
+              <span title="NET AMOUNT">
+                NET AMT
+              </span>
+            </th>
+            
+            <th style="font-size: 17.5px;width:5%">
+              <span title="DUE AMOUNT">
+                DUE AMT
+              </span>
+            </th> 
+
+            <th style="font-size: 17.5px;width:5%">
+              <span title="DUE DAYS">
+                DUE DAYS
+              </span>
+            </th> 
+
+            <th style="font-size: 17.5px;width:5%">
+              <span title="G.R. AMOUNT">
+                G.R. AMT
+              </span>
+            </th>
+
+            <th style="font-size: 17.5px;width:5%">
+              <span title="RATE DIFFERENCE">
+                RATE DIFF
+              </span>
+            </th>
+
+            <th style="font-size: 17.5px;width:5%">
+              <span title="CLAIM LESS">
+                CLAIM LESS
+              </span>
+            </th>
+
+            <th style="font-size: 17.5px;width:5%">
+              <span title="DISCOUNT PERCENTAGE">
+                DISC %
+              </span>
+            </th>
+
+            <th style="font-size: 17.5px;width:5%">
+              <span title="DISCOUNT AMOUNT">
+                DISC AMT
+              </span>
+            </th>
+
+            <th style="font-size: 17.5px;width:5%">
+              <span title="PACKAGING CHARGES">
+                PACKAGING
+              </span>
+            </th>
+
+            <th style="font-size: 17.5px;width:5%">
+              <span title="DEDUCTED AMOUNT">
+                DEDUCTED
+              </span>
+            </th>
+
+            <th style="font-size: 17.5px;width:5%">
+              <span title="INTEREST PERCENTAGE">
+                INT %
+              </span>
+            </th>
+
+            <th style="font-size: 17.5px;width:5%">
+              <span title="INTEREST AMOUNT">
+                INT AMT
+              </span>
+            </th>
+
+            <th style="font-size: 17.5px;width:5%">
+              <span title="SURCHARGE">
+                SURCHARGE
+              </span>
+            </th>
+
+            <th style="font-size: 17.5px;width:5%">
+              <span title="PAID AMOUNT">
+                PAID
+              </span>
+            </th>
+
+            <th style="font-size: 17.5px;width:5%">
+              <span>
+                STATUS
+              </span>
+            </th>
+
+          </tr>
+
+        </table>  
+        
+        <br>
+
+        <table>
+
+          <tr>
+
+            <td style="width: 20%;">
+              <span>
+                BROKERAGE %
+              </span>
+              <input type="number" step="any" min=1  id="brokP" placeholder = "%" autocomplete="off" disabled>  
+            </td>
+
+            <td style="width: 20%;">
+              <span>
+                BROKERAGE AMOUNT
+              </span>
+              <input type="number" step="any" min=1  id="brok" placeholder = "BROKERAGE AMOUNT" autocomplete="off" disabled>  
+            </td>
+
+            <td>
+              <span>
+                REMARKS
+              </span>
+              <br>
+              <input type="text" id="remarks" placeholder="Remarks If Any.." autocomplete="off" disabled> 
+            </td>
+
+          </tr>
+
+        </table>
+
+        <!--SUBMIT BUTTON-->
+        <br><br>
+        <div style="text-align: center">
+          <input type="submit" id="submitButton" class = "btn" value="DELETE">
+        </div>        
+
+      </form>
+
+    </div>
+
+    <div id="snackbar"></div>
+
+    <script src="paymentDelete.js"></script>
+    <script src="payment.js"></script>
+
+  </body>
+  
+</html>

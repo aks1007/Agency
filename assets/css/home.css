@@ -1,0 +1,167 @@
+/*LIGHT-THEME*/
+body[data-theme='light']
+{
+    --primary-color : #6200EE;
+    --primary-variant-color : #3700B3;
+    --secondary-color : #03DAC6;
+    --message-color : #B00020;
+    --background-color : #FFF;
+    --surface-color : #FFF;
+    --on-primary : #FFF;
+    --on-primary-variant : #FFF;
+    --on-secondary : #000;
+    --on-background : #000;
+    --on-surface : #000;
+    --on-message : #FFF;
+    --top-heading : #6200EE;
+    --top-heading-text : #FFF;
+}
+
+/*TRICOLOR-THEME*/
+body[data-theme='tricolor']
+{
+  --primary-color : #138808;
+  --primary-variant-color : #000080;
+  --secondary-color : #03DAC6;
+  --message-color : #B00020;
+  --background-color : #FFF;
+  --surface-color : #FF9933;
+  --on-primary : #fff;
+  --on-primary-variant : #fff;
+  --on-secondary : #000;
+  --on-background : #000;
+  --on-surface : #000;
+  --on-message : #fff;
+  --top-heading : #138808;
+  --top-heading-text : #fff;
+}
+
+/*CLASSIC-THEME*/
+body[data-theme='classic']
+{
+  --primary-color : #FBDE44;
+  --primary-variant-color : #F65058;
+  --secondary-color : #28334A;
+  --message-color : #F65058;
+  --background-color : #888888;
+  --surface-color : #28334A;
+  --on-primary : #28334A;
+  --on-primary-variant : #fff;
+  --on-secondary : #FFF;
+  --on-background : #28334A;
+  --on-surface : #F65058;
+  --on-message : #fff;
+  --top-heading : #FBDE44;
+  --top-heading-text : #28334A;
+}
+
+/*DARK-THEME*/
+body[data-theme='dark']
+{
+    --primary-color : #BB86FC;
+    --primary-variant-color : #3700B3;
+    --secondary-color : #03DAC6;
+    --message-color : #CF6679;
+    --background-color : #121212;
+    --surface-color : #1F1A24;
+    --on-primary : #000;
+    --on-primary-variant : #fff;
+    --on-secondary : #000;
+    --on-background : #fff;
+    --on-surface : #fff;
+    --on-message : #000;
+    --top-heading : transparent;
+    --top-heading-text : #BB86FC;
+}
+
+/* BODY */
+body
+{
+    background: var(--background-color);
+    user-select: none;
+    margin : 0;
+}
+
+/* TOP-HEADING */
+#top
+{
+    background-color: var(--top-heading) ;
+    border-radius: 5px;
+    margin: 20px 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* TOP-HEADING-TEXT */
+#agencyname
+{
+    text-align: center;   
+    transition: all 0.3s ease-in-out;
+    font-family: 'Orbitron';
+    font-size: 50px;
+    font-weight: bolder;
+    color: var(--top-heading-text);
+}
+
+/* MENU */
+
+/* MENU-BAR */
+.menu-bar 
+{
+    background-color: transparent;
+    overflow: hidden;
+    border-radius: 4px;
+    text-align: center;
+}
+
+/* MENU-BAR-CONTENT */
+.menu-bar a 
+{
+    display: inline-block;
+    vertical-align: middle;
+    width: 31%;
+    margin: 10px 10px;
+    float: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    background: var(--surface-color);
+    color: var(--on-surface);
+    font-family: 'Fredoka One';
+    font-size: 40px;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* MENU-BAR-CONTENT-HOVER */
+.menu-bar a:hover
+{
+    transition: 0.2s ease-in-out;
+    color: var(--on-primary);
+    background-color: var(--primary-color);
+}
+
+.menu-bar a:focus
+{
+    transition: 0.2s ease-in-out;
+    color: var(--on-primary);
+    background-color: var(--primary-color);  
+    outline: none;  
+}
+
+/*EXIT-BUTTON*/
+#exit
+{
+    padding: none;
+    margin: none;
+    background-color: transparent;
+    color: var(--primary-color);
+    border: none;
+    font-size: 25px;
+}
+
+#exit:focus
+{
+    outline: none;
+}

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+
+    <meta charset="UTF-8" content="width=device-width, initial-scale=1"> 
+    
+<title>AGENCY by TANTRA </title>   
+
+    <!--CSS--> 
+    <link rel="stylesheet" href="../../../node_modules/select2/dist/css/select2.css"> 
+    <link rel="stylesheet" href="../../../node_modules/@fortawesome/fontawesome-free/css/all.css"> 
+    <link rel="stylesheet" href="../../../assets/css/database.css">
+    <link rel="stylesheet" href="../../../assets/css/hover.css">  
+    <link rel="stylesheet" href="../../../assets/fonts/Alegreya.css">
+    <link rel="stylesheet" href="../../../assets/fonts/Comfortaa.css">
+    <link rel="stylesheet" href="../../../assets/fonts/Fredoka-One.css">
+    <link rel="stylesheet" href="../../../assets/fonts/Orbitron.css">    
+
+  </head>
+
+  <body onkeydown="shortCuts(event)">
+
+    <div class="menu-bar">
+      <!--HEADING-->
+      <div id=top>
+
+        <h1 id=topHeading>
+
+          ADDRESS LIST
+
+        </h1>
+      
+      </div>
+    </div>
+
+    <div id=searchRow style="margin-top:100px;">
+
+      <table style="margin-left : 12.5% ; width: 75%;">
+
+          <tr>
+
+            <td>
+                <span>
+                  CATEGORY
+                </span>
+                <br><br>
+                <select style="width: 50%;" id=category class="js-example-basic-multiple" multiple="multiple">
+                  <option value="ALL">ALL</option>
+                  <option value="CUSTOMERS">CUSTOMERS</option>
+                  <option value="SUPPLIERS">SUPPLIERS</option>
+                </select> 
+            </td>
+
+          </tr>
+
+      </table>
+      <br>
+      <div style="text-align: center">
+        <input type="submit" id="searchButton" class = "btn" value="SEARCH">
+      </div> 
+
+    </div>
+  
+
+    <div>
+
+      <table id="database" style="display: none;margin-top: 100px;">
+
+        <!--INVOICE DATABASE-->            
+        <tr style="background : transparent; border : 0px solid;">
+
+          <th>
+            <span>
+              #
+            </span>
+          </th>
+
+          <th>
+            <span>
+              TYPE
+            </span>
+          </th>
+  
+          <th>
+            <span>
+              NAME
+            </span>
+          </th>
+
+          <th>
+            <span>
+              GROUP
+            </span>
+          </th>          
+
+          <th>
+            <span>
+              PHONE NO.
+            </span>
+          </th>
+
+          <th>
+            <span>
+              MOBILE NO.
+            </span>
+          </th>
+
+          <th>
+            <span>
+              LINE 1
+            </span>
+          </th>
+
+          <th>
+            <span>
+              LINE 2
+            </span>
+          </th>
+
+          <th>
+            <span>
+              CITY
+            </span>
+          </th>
+
+          <th>
+            <span>
+              STATE
+            </span>
+          </th>
+
+          <th>
+            <span>
+              PINCODE
+            </span>
+          </th>
+                  
+        </tr> 
+
+      </table>    
+
+    </div>      
+    <script src="addressList.js"></script>
+
+  </body>  
+
+</html>    

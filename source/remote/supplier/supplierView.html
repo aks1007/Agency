@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+
+    <meta charset="UTF-8" content="width=device-width, initial-scale=1"> 
+    
+<title>AGENCY by TANTRA </title>  
+
+    <!--CSS-->    
+    <link rel="stylesheet" href="../../../node_modules/@fortawesome/fontawesome-free/css/all.css">                        
+    <link rel="stylesheet" href="../../../assets/css/menu.css">   
+    <link rel="stylesheet" href="../../../assets/css/input.css">
+    <link rel="stylesheet" href="../../../assets/css/hover.css">  
+    <link rel="stylesheet" href="../../../assets/fonts/OpenSans.css">
+    <link rel="stylesheet" href="../../../assets/fonts/Fredoka-One.css">
+    <link rel="stylesheet" href="../../../assets/fonts/Orbitron.css">
+    
+  </head>
+
+  <body  onkeydown="shortCuts(event)">
+
+    <!--MENU-->
+    
+    <div class="menu-bar">
+
+      <a href="supplierHome.html" id="back" class="hvr-icon-back">
+        <i class="fas fa-arrow-circle-left hvr-icon" aria-hidden="true"></i>
+        <br>
+        BACK
+      </a> 
+
+      <a id="new" href="supplierNew.html" class="hvr-icon-pulse-grow">
+        <i class="fas fa-plus-square hvr-icon" aria-hidden="true"></i>
+        <br>
+        NEW
+      </a> 
+
+      <a id="view" href="supplierView.html" class="hvr-icon-pulse-grow">
+          <i class="fas fa-search hvr-icon" aria-hidden="true"></i>
+          <br>
+          UPDATE
+      </a>
+
+      <a id="delete" href="supplierDelete.html" class="hvr-icon-pulse-grow">
+          <i class="fas fa-trash hvr-icon" aria-hidden="true"></i>
+          <br>
+          DELETE
+      </a>
+
+      <a id="db" href="supplierDatabase.html" class="hvr-icon-pulse-grow">
+          <i class="fas fa-database hvr-icon" aria-hidden="true"></i>
+          <br>
+          COLLECTION
+      </a>
+
+
+    </div>
+
+    <!--HEADING-->
+    <div id=top>
+
+      <h1 id=topHeading>
+
+        UPDATE SUPPLIER
+
+      </h1>
+    
+    </div>
+
+    <!--FORM-->
+    <div>
+      
+      <form  id="forme" action="#" spellcheck="false">       
+
+        <table>    
+
+          <!--GENERAL DETAILS-->
+          <tr>
+
+            <td>
+              <span>
+              SUPPLIER's NAME
+              </span>
+              <br>
+              <input list="suppliers" style="width: 100%;" type="text" id="supplier" placeholder ="SUPPLIER's NAME"  onfocus="resetForm();showSuppliers()" onfocusout="checkSupplier()" autocomplete="off" autofocus required>
+              <datalist id="suppliers"></datalist>
+            </td>
+
+            <td>
+              <span>
+              SUPPLIER GROUP
+              </span>
+              <br>
+              <input style="width: 100%;" type="text" id="supplierGroup" placeholder ="SUPPLIER GROUP" autocomplete="off" disabled>
+            </td>
+            
+            <td>
+              <span>
+                DEALS IN
+              </span>
+              <br>
+              <input style="width: 100%;" type="text" id="dealsIn" placeholder ="ITEM" autocomplete="off" disabled>
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td>
+              <span>
+                EMAIL ID
+              </span>
+              <br>
+              <input style="width: 100%; text-transform: lowercase;" type="email" id="emailId" placeholder ="@" autocomplete="off" disabled>
+            </td>
+
+            <td>
+              <span>
+                PHONE NO.
+              </span>
+              <br>
+              <input style="width: 100%;" type="number" id="phoneNo" placeholder ="PHONE NO" autocomplete="off" disabled>
+            </td>
+
+            <td>
+              <span>
+                MOBILE NO.
+              </span>
+              <br>
+              <input style="width: 100%;" type="number" id="mobileNo" placeholder ="MOBILE NO" autocomplete="off" disabled>
+            </td>
+
+          </tr> 
+
+        </table> 
+      
+        <table>
+
+          <!--ADDRESS-->
+          <tr id="address">
+
+            <td>  
+              <span>
+                ADDRESS
+              </span>
+            </td>
+
+          </tr>
+
+        </table>  
+
+        <table>  
+          <tr style="border-top: none;border-bottom: none;">
+
+            <td class="column20">
+              <span>
+                LINE 1
+              </span>
+              <br>
+              <input type="text" id="line1" placeholder ="ADDRESS LINE 1" autocomplete="off" disabled>
+            </td>
+
+            <td class="column20">
+              <span>
+                LINE 2
+              </span>
+              <br>
+              <input type="text" id="line2" placeholder ="ADDRESS LINE 2" autocomplete="off" disabled>
+            </td>
+
+            <td class="column20">
+              <span>
+                CITY
+              </span>
+              <br>
+              <input type="text" id="city" placeholder ="CITY" autocomplete="off" disabled>
+            </td>
+
+            <td class="column20">
+              <span>
+                STATE
+              </span>
+              <br>
+              <input type="text" id="state" placeholder ="STATE" autocomplete="off" disabled>
+            </td>
+
+            <td class="column20">
+              <span>
+                PIN CODE
+              </span>
+              <br>
+              <input type="number" id="pinCode" placeholder ="PIN CODE" autocomplete="off" disabled>
+            </td>
+
+          </tr> 
+        
+        </table>
+        
+        <table>
+
+          <tr>
+
+            <td>
+              <span>
+                POSTAL SERVICE
+              </span>
+              <br>
+              <input style="width: 100%;" type="text" id="post" placeholder ="POSTAL SERVICE" autocomplete="off" disabled>
+            </td>
+
+            <td>
+              <span>
+                PAN NO.
+              </span>
+              <br>
+              <input style="width: 100%;" type="text" id="pan" placeholder ="PAN NO" autocomplete="off" disabled>
+            </td>
+
+            <td>
+              <span>
+                GST NO.
+              </span>
+              <br>
+              <input style="width: 100%;" type="text" id="gstNo" placeholder ="GST NO" autocomplete="off" disabled>
+            </td>             
+
+            <td>
+              <span>
+                POINT OF CONTACT
+              </span>
+              <br>
+              <input style="width: 100%" type="text" id="poc" placeholder ="POINT OF CONTACT" autocomplete="off" disabled>
+            </td>
+
+          </tr>
+
+        </table>  
+
+        <table>
+
+          <tr>
+
+            <td>
+              <span>
+                DUE DAYS LIMIT
+              </span>
+              <br>
+              <input style="width: 100%;" type="number" id="ddl" placeholder ="DUE DAYS LIMIT" autocomplete="off" disabled>
+            </td>
+
+            <td>
+              <span>
+                R.D PER PIECE
+              </span>
+              <br>
+              <input style="width: 100%;" type="number" id="rdpp" placeholder ="RATE DIFFERENCE PER PIECE" autocomplete="off" disabled>
+            </td>
+
+            <td>
+              <span>
+                R.D PER METRE
+              </span>
+              <br>
+              <input style="width: 100%;" type="number" id="rdpm" placeholder ="RATE DIFFERENCE PER METRE" autocomplete="off" disabled>
+            </td>
+
+            <td>
+              <span>
+                COMMISSION PERCENTAGE
+              </span>
+              <br>
+              <input style="width: 100%;" type="number" id="cp" placeholder ="COMMISSION PERCENTAGE" autocomplete="off" disabled>
+            </td>
+
+            <td>
+              <span>
+                DISCOUNT PERCENTAGE
+              </span>
+              <br>
+              <input style="width: 100%;" type="number" id="discount" placeholder ="DISCOUNT PERCENTAGE" autocomplete="off" disabled>
+            </td>
+
+          </tr>           
+
+          <tr> 
+
+            <td colspan="5">
+              <span>
+              REMARKS
+              </span>
+              <br>
+              <input style="width: 50%;" type="text" id="remarks" placeholder ="Remarks if any..." autocomplete="off" disabled> 
+            </td>
+
+          </tr>
+        
+        </table>
+
+        <table>
+
+          <tr>
+
+            <td style="width: 50%;">
+              <span>
+                BROKERAGE LESS IN PAYMENTS
+              </span>
+              <br>
+              <label class="switch">
+                <input type="checkbox" id="blip" value=false disabled>
+                <span class="slider"></span>
+              </label>
+            </td>
+
+            <td style="width:50%;">
+              <span>
+                BLACKLIST
+              </span>
+              <br>
+              <label class="switch">
+                <input type="checkbox" id="blackList" value=false disabled>
+                <span class="slider"></span>
+              </label>
+            </td>
+
+          </tr>
+
+        </table>
+        <!--SUBMIT BUTTON-->
+        <br><br>
+        <div style="text-align: center">
+          <input type="submit" id="submitButton" class = "btn" value="SUBMIT">
+        </div>        
+
+      </form>
+
+    </div>
+
+    <div id="snackbar"></div>
+
+    <script src="supplierView.js"></script>
+    <script src="supplier.js"></script>
+
+  </body>
+  
+</html>

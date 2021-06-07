@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+
+    <meta charset="UTF-8" content="width=device-width, initial-scale=1"> 
+    
+<title>AGENCY by TANTRA </title>   
+
+    <!--CSS-->
+    <link rel="stylesheet" href="../../node_modules/@fortawesome/fontawesome-free/css/all.css">                               
+    <link rel="stylesheet" href="../../assets/css/menu.css">   
+    <link rel="stylesheet" href="../../assets/css/input.css">
+    <link rel="stylesheet" href="../../assets/css/hover.css">  
+    <link rel="stylesheet" href="../../assets/fonts/OpenSans.css">
+    <link rel="stylesheet" href="../../assets/fonts/Fredoka-One.css">
+    <link rel="stylesheet" href="../../assets/fonts/Orbitron.css">
+
+  </head>
+
+  <body onkeydown="shortCuts(event)">
+
+    <!--MENU-->
+    <div class="menu-bar" style="text-align:center">
+
+      <a href="settings.html" id="back" class="hvr-icon-back">
+        <i class="fas fa-arrow-circle-left hvr-icon" aria-hidden="true"></i>
+        <br>
+        BACK
+      </a>
+
+
+    </div>
+
+    <!--HEADING-->
+    <div id=top>
+
+      <h1 id=topHeading>
+
+        COMPANY INFO
+
+      </h1>
+    
+    </div>
+
+    <!--FORM-->
+    <div>
+      
+      <form id="forme" spellcheck="false" >       
+
+        <table>    
+
+          <!--GENERAL DETAILS-->
+
+          <tr>
+
+            <td>
+              <span>
+              NAME OF COMPANY
+              </span>
+              <br>
+              <input type="text" id="companyName" placeholder ="NAME OF COMPANY" autocomplete="off" required autofocus>
+            </td>
+
+            <td>
+              <span>
+               PAN
+              </span>
+              <br>
+              <input type="string" id="pan" placeholder ="PAN" autocomplete="off">
+            </td>
+            
+            <td>
+              <span>
+                GST NO.
+              </span>
+              <br>
+              <input type="string" id="gstin" placeholder ="GST NO." autocomplete="off">
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td>
+              <span>
+                PHONE NO
+              </span>
+              <br>
+              <input type="number" id="phoneNo" placeholder ="PHONE NO." autocomplete="off" required>
+            </td>
+
+            <td>
+              <span>
+                TELEPHONE NO
+              </span>
+              <br>
+              <input type="number" id="telephoneNo" placeholder ="TELEPHONE NO." autocomplete="off" required>
+            </td>
+
+            <td>
+              <span>
+                EMAIL ID
+              </span>
+              <br>
+              <input type="email" id="email" placeholder ="EMAIL ID" style="text-transform: lowercase;" autocomplete="off" required>
+            </td>
+
+          </tr>
+
+            
+          <table> 
+             
+            <tr style="border-top: none;border-bottom: none;">
+  
+              <td>
+                <span>
+                  ADDRESS
+                </span>
+                <br>
+                <input type="text" id="address" placeholder ="ADDRESS" autocomplete="off" required>
+              </td>
+  
+            </tr> 
+          
+          </table>
+
+        <!--SUBMIT BUTTON-->
+        <br><br>
+        <div style="text-align: center">
+          <input type="submit" id="submitButton" class = "btn" value="SUBMIT">
+        </div>        
+
+      </form>
+
+    </div>
+
+    <div id="snackbar"></div>
+    
+    <script src="info.js"></script>
+  </body>
+  
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+
+    <meta charset="UTF-8" content="width=device-width, initial-scale=1"> 
+    
+<title>AGENCY by TANTRA </title>   
+
+    <!--CSS-->
+    <link rel="stylesheet" href="../../../node_modules/@fortawesome/fontawesome-free/css/all.css"> 
+    <link rel="stylesheet" href="../../../assets/css/database.css">
+    <link rel="stylesheet" href="../../../assets/css/hover.css">  
+    <link rel="stylesheet" href="../../../assets/fonts/Alegreya.css">
+    <link rel="stylesheet" href="../../../assets/fonts/Comfortaa.css">
+    <link rel="stylesheet" href="../../../assets/fonts/Fredoka-One.css">
+    <link rel="stylesheet" href="../../../assets/fonts/Orbitron.css">    
+
+  </head>
+
+  <body  onload="showDatabase()" onkeydown="shortCuts(event)">
+
+    <!--MENU-->
+    <div class="menu-bar" style="text-align:center">
+
+      <a href=# id="back" class="hvr-icon-back">
+        <i class="fas fa-arrow-circle-left hvr-icon" aria-hidden="true"></i>
+        <br>
+        BACK
+      </a> 
+
+      <a id="new" href="locationNew.html" class="hvr-icon-pulse-grow">
+        <i class="fas fa-plus-square hvr-icon" aria-hidden="true"></i>
+        <br>
+        NEW
+      </a> 
+
+      <a id="view" href="locationUpdate.html" class="hvr-icon-pulse-grow">
+          <i class="fas fa-search hvr-icon" aria-hidden="true"></i>
+          <br>
+          UPDATE
+      </a>
+
+      <a id="delete" href="locationDelete.html" class="hvr-icon-pulse-grow">
+          <i class="fas fa-trash hvr-icon" aria-hidden="true"></i>
+          <br>
+          DELETE
+      </a>
+
+      <a id="db" href="locationDatabase.html" class="hvr-icon-pulse-grow">
+          <i class="fas fa-database hvr-icon" aria-hidden="true"></i>
+          <br>
+          DATABASE
+      </a>
+
+    </div>
+
+    <div class="menu-bar" style="top: 100px;">
+      <!--HEADING-->
+      <div id=top>
+
+        <h1 id=topHeading>
+
+          LOCATION DATABASE
+
+        </h1>
+      
+      </div>
+    </div>  
+
+    <div style="width:50%;margin-left: 25%"> 
+
+      <table id="database">
+
+        <!--LOCATION DATABASE-->            
+        <tr style="background : transparent; border : 0px solid;">
+
+          <th>
+              <span>
+                #
+              </span>
+          </th>
+
+          <th>
+              <span>
+                CITY
+              </span>
+          </th>
+
+          <th>
+              <span>
+                STATE
+              </span>
+          </th>
+
+          <th>
+            <span>
+              STD CODE
+            </span>
+          </th>
+                  
+        </tr> 
+
+      </table>    
+
+    </div>      
+
+    <script src="locationDatabase.js"></script>
+    <script src="location.js"></script>
+
+  </body>  
+
+</html>    
