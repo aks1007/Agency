@@ -688,7 +688,8 @@ function setStatus(s)
         x.className = "showError";
         x.innerHTML = "G.R. AMOUNT EXCEEDS DUE INVOICE AMOUNT"
         setTimeout(function(){ x.className = x.className.replace("showError", "");}, 2000);
-        document.getElementById('grA'+s).focus()
+        document.getElementById('grA'+s).setCustomValidity("G.R. AMOUNT EXCEEDS DUE INVOICE AMOUNT")
+        document.getElementById('grA'+s).reportValidity()
     }
     else
     {

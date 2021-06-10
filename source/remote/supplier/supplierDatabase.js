@@ -4,7 +4,7 @@ function followRow()
     sessionStorage.setItem('supplierKey',this.cells[1].innerText)
     x = sessionStorage.getItem('supplierKey')
     console.log(x)
-    window.location = './supplierView.html'
+    window.location = './supplierUpdate.html'
 }
 
 function enterRow()
@@ -16,7 +16,7 @@ function enterRow()
         {
             sessionStorage.setItem('supplierKey',this.cells[1].innerText)
             x = sessionStorage.getItem('supplierKey')
-            window.location = './supplierView.html'
+            window.location = './supplierUpdate.html'
         }
     })
 }

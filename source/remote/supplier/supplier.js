@@ -22,7 +22,7 @@ function shortCuts(event)
 
     if(event.altKey && x==85 )
     {
-        window.location = "supplierView.html"
+        window.location = "supplierUpdate.html"
     }
 
     if(event.altKey && x==68 )

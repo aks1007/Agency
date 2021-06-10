@@ -20,7 +20,7 @@ function shortCuts(event)
 
     if(x==85 )
     {
-        window.location = "customerView.html"
+        window.location = "customerUpdate.html"
     }
 
     if(x==68 )

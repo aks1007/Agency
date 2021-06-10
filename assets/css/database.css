@@ -195,11 +195,6 @@ body
   display: none;
 }
 
-span
-{
-  color: var(--on-background);
-}
-
 #database
 {  
   border-spacing: 0px;
@@ -249,8 +244,8 @@ td
 }
 
 .odd{
-  background: var(--odd-row-color);    
   color: var(--on-odd-row);
+  background: var(--odd-row-color);   
 }
 
 .even{

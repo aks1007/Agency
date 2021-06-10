@@ -1,8 +1,11 @@
 window.onload = ()=>{
     const bodyTag = document.getElementsByTagName("body")[0]
+    if(!(localStorage.getItem('theme')))
+    {
+        localStorage.setItem('theme','classic')
+    }
     const Theme = localStorage.getItem('theme')
-    bodyTag.setAttribute('data-theme',Theme)
-    console.log(localStorage.getItem('companyName'))
+    bodyTag.setAttribute('data-theme',Theme) 
     agencyname.innerHTML = localStorage.getItem('companyName')
 }
 

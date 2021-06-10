@@ -41,7 +41,7 @@ submitButton.addEventListener('click', (event) => {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
-                customer: customerName.value.toUpperCase(),
+                customer: customerName.value.trim().toUpperCase(),
                 customerGroup: customerGroup.value.toUpperCase(),                
                 dealsIn : dealsIn.value.toUpperCase(),
                 emailId: emailId.value,
@@ -284,3 +284,53 @@ window.onload = ()=>{
     const Theme = localStorage.getItem('theme')
     bodyTag.setAttribute('data-theme',Theme)   
 }
+
+//REMOTE TABS
+
+//CUSTOMER-GROUP
+document.getElementById('customerGroup').addEventListener('keydown',(event,keyCode)=>{
+    var x = event.keyCode
+
+    if(x==112)
+    {
+        var address = 'source/remote/customerGroup/customerGroupNew.html'
+        const ipcRenderer = require('electron').ipcRenderer
+        ipcRenderer.send('remoteWindow', address )
+    }
+})
+
+//ITEM-GROUP
+document.getElementById('dealsIn').addEventListener('keydown',(event,keyCode)=>{
+    var x = event.keyCode
+
+    if(x==112)
+    {
+        var address = 'source/remote/itemGroup/itemGroupNew.html'
+        const ipcRenderer = require('electron').ipcRenderer
+        ipcRenderer.send('remoteWindow', address )
+    }
+})
+
+//LOCATION
+document.getElementById('city').addEventListener('keydown',(event,keyCode)=>{
+    var x = event.keyCode
+
+    if(x==112)
+    {
+        var address = 'source/remote/location/locationNew.html'
+        const ipcRenderer = require('electron').ipcRenderer
+        ipcRenderer.send('remoteWindow', address )
+    }
+})
+
+//POST
+document.getElementById('postal').addEventListener('keydown',(event,keyCode)=>{
+    var x = event.keyCode
+
+    if(x==112)
+    {
+        var address = 'source/remote/post/postNew.html'
+        const ipcRenderer = require('electron').ipcRenderer
+        ipcRenderer.send('remoteWindow', address )
+    }
+})

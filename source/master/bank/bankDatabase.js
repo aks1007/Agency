@@ -32,9 +32,7 @@ function showDatabase()
     .then( response => response.json())
     .then(data => 
     {
-        console.log(data)
         var limit = data.count
-        console.log(limit)
         for(i=0; i<limit; i++)
         {
             var table = document.getElementById('database')
@@ -70,6 +68,7 @@ function showDatabase()
             row.onclick = followRow            
             row.onfocus = enterRow
 
+            console.log(element1.style.color)
         }
     })
     .catch(error =>{

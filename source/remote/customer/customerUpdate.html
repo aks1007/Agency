@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+
+    <meta charset="UTF-8" content="width=device-width, initial-scale=1"> 
+    
+<title>AGENCY by TANTRA </title>  
+
+    <!--CSS-->    
+    <link rel="stylesheet" href="../../../node_modules/@fortawesome/fontawesome-free/css/all.css">                        
+    <link rel="stylesheet" href="../../../assets/css/menu.css">   
+    <link rel="stylesheet" href="../../../assets/css/input.css">
+    <link rel="stylesheet" href="../../../assets/css/hover.css">  
+    <link rel="stylesheet" href="../../../assets/fonts/OpenSans.css">
+    <link rel="stylesheet" href="../../../assets/fonts/Fredoka-One.css">
+    <link rel="stylesheet" href="../../../assets/fonts/Orbitron.css">
+    
+  </head>
+
+  <body  onkeydown="shortCuts(event)">
+
+    <!--MENU-->
+    
+    <div class="menu-bar">
+
+      <a href="customerHome.html" id="back" class="hvr-icon-back">
+        <i class="fas fa-arrow-circle-left hvr-icon" aria-hidden="true"></i>
+        <br>
+        BACK
+      </a> 
+
+      <a id="new" href="customerNew.html" class="hvr-icon-pulse-grow">
+        <i class="fas fa-plus-square hvr-icon" aria-hidden="true"></i>
+        <br>
+        NEW
+      </a> 
+
+      <a id="view" href="customerUpdate.html" class="hvr-icon-pulse-grow">
+          <i class="fas fa-search hvr-icon" aria-hidden="true"></i>
+          <br>
+          UPDATE
+      </a>
+
+      <a id="delete" href="customerDelete.html" class="hvr-icon-pulse-grow">
+          <i class="fas fa-trash hvr-icon" aria-hidden="true"></i>
+          <br>
+          DELETE
+      </a>
+
+      <a id="db" href="customerDatabase.html" class="hvr-icon-pulse-grow">
+          <i class="fas fa-database hvr-icon" aria-hidden="true"></i>
+          <br>
+          COLLECTION
+      </a>
+
+
+    </div>
+
+    <!--HEADING-->
+    <div id=top>
+
+      <h1 id=topHeading>
+
+        UPDATE CUSTOMER
+
+      </h1>
+    
+    </div>
+
+    <!--FORM-->
+    <div>
+      
+      <form  id="forme" action="#" spellcheck="false">       
+
+        <table>    
+
+          <tr>
+
+            <td colspan="3">
+              <span>
+              CUSTOMER's NAME
+              </span>
+              <br>
+              <input style="width: 33.33%;" list="customers" style="width: 100%;" type="text" id="customer" placeholder ="CUSTOMER's NAME" autocomplete="off" autofocus required>
+              <datalist id="customers"></datalist>
+            </td>
+
+          </tr>
+
+          <!--GENERAL DETAILS-->
+          <tr>
+
+            <td style="width: 33.33%;">
+              <span>
+              NEW CUSTOMER's NAME
+              </span>
+              <br>
+              <input style="width: 100%;" type="text" id="newCustomer" placeholder ="NEW CUSTOMER's NAME"  autocomplete="off" required disabled>
+            </td>
+
+            <td style="width: 33.33%;">
+              <span>
+              CUSTOMER GROUP
+              </span>
+              <br>
+              <input list="customerGroups" style="width: 100%;" type="text" id="customerGroup" placeholder ="CUSTOMER GROUP" autocomplete="off" disabled>
+              <datalist id="customerGroups"></datalist>
+            </td>
+            
+            <td style="width: 33.33%;">
+              <span>
+                DEALS IN
+              </span>
+              <br>
+              <input list=itemGroups style="width: 100%;" type="text" id="itemGroup" placeholder ="ITEM" autocomplete="off" disabled>
+              <datalist id=itemGroups></datalist>
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td>
+              <span>
+                EMAIL ID
+              </span>
+              <br>
+              <input style="width: 100%; text-transform: lowercase;" type="email" id="emailId" placeholder ="@" autocomplete="off" disabled>
+            </td>
+
+            <td>
+              <span>
+                PHONE NO.
+              </span>
+              <br>
+              <input style="width: 100%;" type="number" id="phoneNo" placeholder ="PHONE NO" autocomplete="off" disabled>
+            </td>
+
+            <td>
+              <span>
+                MOBILE NO.
+              </span>
+              <br>
+              <input style="width: 100%;" type="number" id="mobileNo" placeholder ="MOBILE NO" autocomplete="off" disabled>
+            </td>
+
+          </tr> 
+
+        </table> 
+      
+        <table>
+
+          <!--ADDRESS-->
+          <tr id="address">
+
+            <td>  
+              <span>
+                ADDRESS
+              </span>
+            </td>
+
+          </tr>
+
+        </table>  
+
+        <table>  
+          <tr style="border-top: none;border-bottom: none;">
+
+            <td class="column20">
+              <span>
+                LINE 1
+              </span>
+              <br>
+              <input type="text" id="line1" placeholder ="ADDRESS LINE 1" autocomplete="off" disabled>
+            </td>
+
+            <td class="column20">
+              <span>
+                LINE 2
+              </span>
+              <br>
+              <input type="text" id="line2" placeholder ="ADDRESS LINE 2" autocomplete="off" disabled>
+            </td>
+
+            <td class="column20">
+              <span>
+                CITY
+              </span>
+              <br>
+              <input list="cities" type="text" id="city" placeholder ="CITY" autocomplete="off" disabled>
+              <datalist id=cities></datalist>
+            </td>
+
+            <td class="column20">
+              <span>
+                STATE
+              </span>
+              <br>
+              <input type="text" id="state" placeholder ="STATE" autocomplete="off" disabled>
+            </td>
+
+            <td class="column20">
+              <span>
+                PIN CODE
+              </span>
+              <br>
+              <input type="number" id="pinCode" placeholder ="PIN CODE" autocomplete="off" disabled>
+            </td>
+
+          </tr> 
+        
+        </table>
+        
+        <table>
+
+          <tr>
+
+            <td>
+              <span>
+                POSTAL SERVICE
+              </span>
+              <br>
+              <input list="posts" style="width: 100%;" type="text" id="postal" placeholder ="POSTAL SERVICE" autocomplete="off" disabled>
+              <datalist id=posts></datalist>
+            </td>
+
+            <td>
+              <span>
+                PAN NO.
+              </span>
+              <br>
+              <input style="width: 100%;" type="text" id="pan" placeholder ="PAN NO" autocomplete="off" disabled>
+            </td>
+
+            <td>
+              <span>
+                GST NO.
+              </span>
+              <br>
+              <input style="width: 100%;" type="text" id="gstNo" placeholder ="GST NO" autocomplete="off" disabled>
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td>
+              <span>
+                POINT OF CONTACT
+              </span>
+              <br>
+              <input style="width: 100%" type="text" id="poc" placeholder ="POINT OF CONTACT" autocomplete="off" disabled>
+            </td>
+
+            <td>
+              <span>
+                CREDIT LIMIT
+              </span>
+              <br>
+              <input style="width: 100%;" type="number" id="creditLimit" placeholder ="CREDIT LIMIT" autocomplete="off" disabled>
+            </td>
+
+            <td>
+              <span>
+                CREDIT DAYS
+              </span>
+              <br>
+              <input style="width: 100%;" type="number" id="creditDays" placeholder ="CREDIT DAYS" autocomplete="off" disabled>
+            </td>
+
+          </tr>           
+
+          <tr> 
+
+            <td colspan="3">
+              <span>
+              REMARKS
+              </span>
+              <br>
+              <input style="width: 50%;" type="text" id="remarks" placeholder ="Remarks if any..." autocomplete="off" disabled>
+            </td>
+
+          </tr>
+        
+        </table>
+
+        <table>
+
+          <tr>
+
+            <td style="width: 50%;">
+              <span>
+                BROKERAGE LESS IN PAYMENTS
+              </span>
+              <br>
+              <label class="switch">
+                <input type="checkbox" id="blip" value=false disabled>
+                <span class="slider"></span>
+              </label>
+            </td>
+
+            <td style="width:50%;">
+              <span>
+                BLACKLIST
+              </span>
+              <br>
+              <label class="switch">
+                <input type="checkbox" id="blackList" value=false disabled>
+                <span class="slider"></span>
+              </label>
+            </td>
+
+          </tr>
+
+        </table>
+        <!--SUBMIT BUTTON-->
+        <br><br>
+        <div style="text-align: center">
+          <input type="submit" id="submitButton" class = "btn" value="UPDATE" disabled>
+        </div>        
+
+      </form>
+
+    </div>
+
+    <div id="snackbar"></div>
+
+    <script src="customerUpdate.js"></script>
+    <script src="customer.js"></script>
+
+  </body>
+  
+</html>

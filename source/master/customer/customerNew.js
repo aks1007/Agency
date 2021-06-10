@@ -322,3 +322,15 @@ document.getElementById('city').addEventListener('keydown',(event,keyCode)=>{
         ipcRenderer.send('remoteWindow', address )
     }
 })
+
+//POST
+document.getElementById('postal').addEventListener('keydown',(event,keyCode)=>{
+    var x = event.keyCode
+
+    if(x==112)
+    {
+        var address = 'source/remote/post/postNew.html'
+        const ipcRenderer = require('electron').ipcRenderer
+        ipcRenderer.send('remoteWindow', address )
+    }
+})

@@ -4,7 +4,7 @@ function followRow()
     sessionStorage.setItem('customerKey',this.cells[1].innerText)
     x = sessionStorage.getItem('customerKey')
     console.log(x)
-    window.location = './customerView.html'
+    window.location = './customerUpdate.html'
 }
 
 function enterRow()
@@ -16,7 +16,7 @@ function enterRow()
         {
             sessionStorage.setItem('customerKey',this.cells[1].innerText)
             x = sessionStorage.getItem('customerKey')
-            window.location = './customerView.html'
+            window.location = './customerUpdate.html'
         }
     })
 }

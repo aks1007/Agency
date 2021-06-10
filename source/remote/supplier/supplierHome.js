@@ -22,7 +22,7 @@ function shortCuts(event)
 
     if(x==85 )
     {
-        window.location = "supplierView.html"
+        window.location = "supplierUpdate.html"
     }
 
     if(x==68 )

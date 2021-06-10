@@ -293,20 +293,22 @@ window.onload = ()=>{
 
 //REMOTE TABS
 
-//CUSTOMER-GROUP
-document.getElementById('supplierGroup').addEventListener('keydown',(event,keyCode)=>{
+//REMOTE TABS
+
+//SUPPLIER-GROUP
+document.getElementById('supplierGroup').addEventListener('keydown', (event,keyCode)=>{
     var x = event.keyCode
 
     if(x==112)
     {
         var address = 'source/remote/supplierGroup/supplierGroupNew.html'
         const ipcRenderer = require('electron').ipcRenderer
-        ipcRenderer.send('remoteWindow', address )
+        ipcRenderer.send('remoteWindow', address)
     }
 })
 
 //ITEM-GROUP
-document.getElementById('dealsIn').addEventListener('keydown',(event,keyCode)=>{
+document.getElementById('itemGroup').addEventListener('keydown',(event,keyCode)=>{
     var x = event.keyCode
 
     if(x==112)
@@ -324,6 +326,18 @@ document.getElementById('city').addEventListener('keydown',(event,keyCode)=>{
     if(x==112)
     {
         var address = 'source/remote/location/locationNew.html'
+        const ipcRenderer = require('electron').ipcRenderer
+        ipcRenderer.send('remoteWindow', address )
+    }
+})
+
+//POST
+document.getElementById('postal').addEventListener('keydown',(event,keyCode)=>{
+    var x = event.keyCode
+
+    if(x==112)
+    {
+        var address = 'source/remote/post/postNew.html'
         const ipcRenderer = require('electron').ipcRenderer
         ipcRenderer.send('remoteWindow', address )
     }

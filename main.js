@@ -29,6 +29,7 @@ function createWindow ()
   win.once('ready-to-show', () => {
       win.maximize()
       win.show()
+      win.center()
     }) 
 
   // ------------------------------------------------------------------------------------  and load the index.html of the app.
@@ -101,7 +102,7 @@ function createWindow ()
     remoteWin.fullScreen = 'true'
     reportWin.show() 
     reportWin.loadFile(address)
-    reportWin.maximize()
+    reportWin.center()
   })
 
     // ------------------------------------------------------------------------------------ IPC Coomunication to hide Report Window
@@ -130,7 +131,7 @@ function createWindow ()
     remoteWin.center = 'true'
     remoteWin.show() 
     remoteWin.loadFile(address)
-    remoteWin.maximize()
+    remoteWin.center
   })
 
   // ------------------------------------------------------------------------------------ IPC Coomunication to hide Remote Window
@@ -184,8 +185,8 @@ function createWindow ()
   {
     event.preventDefault()
     reportWin.hide()
-    win.center = 'true'
     win.focus()
+    win.center()
   })
 
   // ------------------------------------------------------------------------------------ Closing Print Window
@@ -193,8 +194,8 @@ function createWindow ()
   {
     event.preventDefault()
     remoteWin.hide()
-    win.center = 'true'
     win.focus()
+    win.center
   })
 
   // ------------------------------------------------------------------------------------ Gloabal Shortcut for Find-In-Page

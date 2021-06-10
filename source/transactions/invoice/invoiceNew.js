@@ -313,11 +313,8 @@ function checkCombo()
             if(data.code==200)
             {
                 //Notifies user through custom response message.
-                var x = document.getElementById("snackbar");
-                x.className = "showError";
-                x.innerHTML = "INVOICE ALREADY RECORDED AT SERIAL NO. " + data.serialNo
-                setTimeout(function(){ x.className = x.className.replace("showError", "");}, 3000);
-                billNo.select();
+                billNo.setCustomValidity('Invoice has already been recorded at Serial No. ' + serialNo.value)
+                billNo.reportValidity()
             }
         })
     }
