@@ -13,13 +13,16 @@ router.get('/', postController.getAllPosts)
 router.post('/', postController.postOnePost)
 
 //--DISPLAYING A POST--
-router.get('/:postName', postController.getOnePost)
+router.get('/basic/:postName', postController.getOnePost)
 
 //--UPDATING A POST--
-router.put('/:postName', postController.putOnePost)
+router.put('/basic/:postName', postController.putOnePost)
 
 //--DELETING A POST--
-router.delete('/:postName', postController.deleteOnePost)
+router.delete('/basic/:postName', postController.deleteOnePost)
+
+//--ADRESS LIST REPORT(ALL)--
+router.get('/address', postController.getAllAddress)
 
 
 module.exports = router

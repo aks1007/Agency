@@ -7,7 +7,7 @@ document.getElementById('submitButton').addEventListener('click', (event) => {
     else
     {
         event.preventDefault()
-        fetch('http://localhost:7070/transporter/'+ transporter.value , { method: 'DELETE'})
+        fetch('http://localhost:7070/transporter/basic/'+ transporter.value , { method: 'DELETE'})
         .then(response => response.json())
         .then(data => 
         {
@@ -69,7 +69,7 @@ function showTransporters()
 
 function checkTransporter()
 {
-    fetch('http://localhost:7070/transporter/' + transporter.value )
+    fetch('http://localhost:7070/transporter/basic/' + transporter.value )
     .then( response => response.json())
     .then(data => 
     {

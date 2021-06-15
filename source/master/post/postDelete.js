@@ -7,7 +7,7 @@ document.getElementById('submitButton').addEventListener('click', (event) => {
     else
     {
         event.preventDefault()
-        fetch('http://localhost:7070/post/'+ post.value , { method: 'DELETE'})
+        fetch('http://localhost:7070/post/basic/'+ post.value , { method: 'DELETE'})
         .then(response => response.json())
         .then(data => 
         {
@@ -69,7 +69,7 @@ function showPosts()
 
 function checkPost()
 {
-    fetch('http://localhost:7070/post/' + post.value )
+    fetch('http://localhost:7070/post/basic/' + post.value )
     .then( response => response.json())
     .then(data => 
     {

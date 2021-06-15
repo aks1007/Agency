@@ -856,7 +856,7 @@ function showTransporters()
 //---------------------------------------------------------FUNCTION TO VALIDATE EACH TRANPORTER INPUT FIELD
 function checkTransporter(it)
 {
-    fetch('http://localhost:7070/transporter/' + it.value )
+    fetch('http://localhost:7070/transporter/basic/' + it.value )
     .then( response => response.json())
     .then(data => 
     {

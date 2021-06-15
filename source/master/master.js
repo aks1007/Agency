@@ -29,12 +29,12 @@ function shortCuts(event)
 
     if(event.ctrlKey && event.keyCode == 67)
     {
-        window.location = "./customerGroup/customerGroupHome.html"
+        window.location = "./customerGroup/basic/customerGroupHome.html"
     }
 
     if(event.ctrlKey && event.keyCode == 83)
     {
-        window.location = "./supplierGroup/supplierGroupHome.html"
+        window.location = "./supplierGroup/basic/supplierGroupHome.html"
     }
 
     if(event.ctrlKey && event.keyCode == 73)

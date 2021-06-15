@@ -114,7 +114,7 @@ function showCustomerGroups()
 
 function checkCustomerGroup()
 {
-    fetch('http://localhost:7070/customerGroup/' + customerGroup.value )
+    fetch('http://localhost:7070/customerGroup/basic/' + customerGroup.value )
     .then( response => response.json())
     .then(data => 
     {
@@ -255,7 +255,7 @@ function showPosts()
 
 function checkPost()
 {
-    fetch('http://localhost:7070/post/' + post.value )
+    fetch('http://localhost:7070/post/basic/' + post.value )
     .then( response => response.json())
     .then(data => 
     {

@@ -9,8 +9,8 @@
 <title>AGENCY by TANTRA </title>   
 
     <!--CSS--> 
-    <link rel="stylesheet" href="../../../node_modules/select2/dist/css/select2.css"> 
     <link rel="stylesheet" href="../../../node_modules/@fortawesome/fontawesome-free/css/all.css"> 
+    <link rel="stylesheet" href="../../../assets/css/chosen.css">
     <link rel="stylesheet" href="../../../assets/css/database.css">
     <link rel="stylesheet" href="../../../assets/css/hover.css">  
     <link rel="stylesheet" href="../../../assets/fonts/Alegreya.css">
@@ -46,10 +46,13 @@
                   CATEGORY
                 </span>
                 <br><br>
-                <select style="width: 50%;" id=category class="js-example-basic-multiple" multiple="multiple">
-                  <option value="ALL">ALL</option>
+                <select style="width: 50%;" id=category class="chosen" multiple autofocus>
                   <option value="CUSTOMERS">CUSTOMERS</option>
                   <option value="SUPPLIERS">SUPPLIERS</option>
+                  <option value="CUSTOMER GROUPS">CUSTOMER GROUPS</option>
+                  <option value="SUPPLIER GROUPS">SUPPLIER GROUPS</option>
+                  <option value="TRANSPORTERS">TRANSPORTERS</option>
+                  <option value="POSTS">POSTS</option>
                 </select> 
             </td>
 

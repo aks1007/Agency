@@ -238,3 +238,36 @@ exports.deleteOnePost = (req, res, next) => {
         }
     })
 }
+
+//ADDRESS LIST REPORT(ALL)
+exports.getAllAddress = (req, res, next) => {
+    Post.find().lean()
+    .select('post phoneNo emailId line1 line2 city state pinCode')
+    .collation({ "locale": "en", "strength": 2 })
+    .then( docs => {
+        const response = {
+            count: docs.length,
+            Post : docs.map( doc =>{
+                return {
+                    type : "POST",
+                    post: doc.post,
+                    phoneNo: doc.phoneNo,
+                    mobileNo: doc.mobileNo,
+                    emailId: doc.emailId,
+                    line1: doc.line1,
+                    line2: doc.line2,
+                    city: doc.city,
+                    state: doc.state,
+                    pinCode: doc.pinCode,
+                }
+            })
+        }
+        res.status(200).json(response)
+    })
+    .catch(err => {
+        console.log(err)
+        res.status(500).json({ 
+            code : 500,
+            error : err })
+    })    
+}

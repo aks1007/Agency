@@ -16,7 +16,7 @@ function createWindow ()
     transparent: true,
     fullscreen : true,
     resizable : false,
-    darkTheme : true,
+    movable : false,
     webPreferences: 
     {
       nodeIntegration: true,
@@ -27,9 +27,8 @@ function createWindow ()
   })
 
   win.once('ready-to-show', () => {
-      win.maximize()
+      win.setFullScreen(true)
       win.show()
-      win.center()
     }) 
 
   // ------------------------------------------------------------------------------------  and load the index.html of the app.
@@ -87,6 +86,7 @@ function createWindow ()
     transparent : true,
     resizable : false,
     closable : false,
+    movable : false,
     webPreferences : 
     {
       nodeIntegration: true,
@@ -98,11 +98,9 @@ function createWindow ()
 
   // ------------------------------------------------------------------------------------ IPC Communication to Load Report Window
   ipcMain.on('reportWindow', (event, address ) => {    
-    remoteWin.center = 'true'
-    remoteWin.fullScreen = 'true'
     reportWin.show() 
     reportWin.loadFile(address)
-    reportWin.center()
+    remoteWin.setFullScreen(true)
   })
 
     // ------------------------------------------------------------------------------------ IPC Coomunication to hide Report Window
@@ -117,6 +115,7 @@ function createWindow ()
     transparent: true,
     resizable : false,
     closable : false,
+    movable : false,
     webPreferences: 
     {
       nodeIntegration: true,
@@ -127,11 +126,10 @@ function createWindow ()
   })
 
   // ------------------------------------------------------------------------------------ IPC Communication to Load Remote Window
-  ipcMain.on('remoteWindow', (event, address ) => {    
-    remoteWin.center = 'true'
+  ipcMain.on('remoteWindow', (event, address ) => {   
     remoteWin.show() 
     remoteWin.loadFile(address)
-    remoteWin.center
+    remoteWin.setFullScreen(true)
   })
 
   // ------------------------------------------------------------------------------------ IPC Coomunication to hide Remote Window
@@ -186,7 +184,7 @@ function createWindow ()
     event.preventDefault()
     reportWin.hide()
     win.focus()
-    win.center()
+    win.setFullScreen(true)
   })
 
   // ------------------------------------------------------------------------------------ Closing Print Window
@@ -195,7 +193,7 @@ function createWindow ()
     event.preventDefault()
     remoteWin.hide()
     win.focus()
-    win.center
+    win.setFullScreen(true)
   })
 
   // ------------------------------------------------------------------------------------ Gloabal Shortcut for Find-In-Page

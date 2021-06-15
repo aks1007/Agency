@@ -47,7 +47,7 @@ post.oninput = function showPosts()
 post.onblur = function checkPost()
 {
     post.value = post.value.trim() 
-    fetch('http://localhost:7070/post/' + post.value )
+    fetch('http://localhost:7070/post/basic/' + post.value )
     .then( response => response.json())
     .then(data => 
     {     
@@ -163,7 +163,7 @@ document.getElementById('submitButton').addEventListener('click',(event)=>
     if(req==0)
     {
         event.preventDefault()
-        fetch('http://localhost:7070/post/' + post.value, {
+        fetch('http://localhost:7070/post/basic/' + post.value, {
             method: 'PUT',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({

@@ -279,7 +279,7 @@ function showPosts()
 //Function to check if the postal-service input is valid
 function checkPost()
 {
-    fetch('http://localhost:7070/post/' + post.value )
+    fetch('http://localhost:7070/post/basic/' + post.value )
     .then( response => response.json())
     .then(data => 
     {

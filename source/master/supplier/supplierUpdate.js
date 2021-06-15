@@ -163,7 +163,7 @@ supplierGroup.oninput = function showSupplierGroups()
 
 supplierGroup.onblur = function checkSupplierGroup()
 {
-    fetch('http://localhost:7070/supplierGroup/' + supplierGroup.value )
+    fetch('http://localhost:7070/supplierGroup/basic/' + supplierGroup.value )
     .then( response => response.json())
     .then(data => 
     {
@@ -292,7 +292,7 @@ postal.oninput = function showPosts()
 
 postal.onblur = function checkPost()
 {
-    fetch('http://localhost:7070/post/' + postal.value )
+    fetch('http://localhost:7070/post/basic/' + postal.value )
     .then( response => response.json())
     .then(data => 
     {

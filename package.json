@@ -20,11 +20,11 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.14.0",
+    "chosen-js": "^1.8.7",
     "electron-find": "^1.0.6",
     "express": "^4.17.1",
     "jquery": "^3.6.0",
     "mongoose": "^5.12.9",
-    "open": "^7.3.0",
-    "select2": "^4.0.3"
+    "open": "^7.3.0"
   }
 }

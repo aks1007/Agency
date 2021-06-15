@@ -3,7 +3,7 @@ body[data-theme='light']
 {
   --border-color : #000;
   --heading : #3700B3;
-  --on-heading : #fff;
+  --on-heading : #FFFFFF;
   --row-hover : #3700B3;
   --on-row-hover : #fff;
   --even-row-color : #6200EE;
@@ -66,8 +66,8 @@ body[data-theme='classic']
   --on-row-hover : #28334A;
   --even-row-color : #FBDE44;
   --on-even-row : #28334A;
+  --on-odd-row : #FBDE44;
   --odd-row-color : #28334A;
-  --on-odd-row : #fff;
 
   --primary-color : #FBDE44;
   --primary-variant-color : #F65058;
@@ -244,8 +244,8 @@ td
 }
 
 .odd{
-  color: var(--on-odd-row);
   background: var(--odd-row-color);   
+  color: var(--on-odd-row);
 }
 
 .even{
@@ -413,4 +413,9 @@ option
 #searchByDate :focus
 {
   outline: none;
+}
+
+span
+{
+  color: var(--on-background);
 }

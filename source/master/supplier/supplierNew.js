@@ -121,7 +121,7 @@ function showSupplierGroups()
 
 function checkSupplierGroup()
 {
-    fetch('http://localhost:7070/supplierGroup/' + supplierGroup.value )
+    fetch('http://localhost:7070/supplierGroup/basic/' + supplierGroup.value )
     .then( response => response.json())
     .then(data => 
     {
@@ -261,7 +261,7 @@ function showPosts()
 
 function checkPost()
 {
-    fetch('http://localhost:7070/post/' + post.value )
+    fetch('http://localhost:7070/post/basic/' + post.value )
     .then( response => response.json())
     .then(data => 
     {

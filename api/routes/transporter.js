@@ -13,13 +13,16 @@ router.get('/', transporterController.getAllTransporters)
 router.post('/', transporterController.postOneTransporter)
 
 //--DISPLAYING A TRANSPORTER--
-router.get('/:transporterName', transporterController.getOneTransporter)
+router.get('/basic/:transporterName', transporterController.getOneTransporter)
 
 //--UPDATING A TRANSPORTER--
-router.put('/:transporterName', transporterController.putOneTransporter)
+router.put('/basic/:transporterName', transporterController.putOneTransporter)
 
 //--DELETING A TRANSPORTER--
-router.delete('/:transporterName', transporterController.deleteOneTransporter)
+router.delete('/basic/:transporterName', transporterController.deleteOneTransporter)
+
+//--ADRESS LIST REPORT(ALL)--
+router.get('/address', transporterController.getAllAddress)
 
 
 module.exports = router

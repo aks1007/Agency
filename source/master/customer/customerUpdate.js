@@ -153,7 +153,7 @@ customerGroup.oninput = function showCustomerGroups()
 
 customerGroup.onblur = function checkCustomerGroup()
 {
-    fetch('http://localhost:7070/customerGroup/' + customerGroup.value )
+    fetch('http://localhost:7070/customerGroup/basic/' + customerGroup.value )
     .then( response => response.json())
     .then(data => 
     {
@@ -282,7 +282,7 @@ postal.oninput = function showPosts()
 
 postal.onblur = function checkPost()
 {
-    fetch('http://localhost:7070/post/' + postal.value )
+    fetch('http://localhost:7070/post/basic/' + postal.value )
     .then( response => response.json())
     .then(data => 
     {

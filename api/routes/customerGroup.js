@@ -13,13 +13,16 @@ router.get('/', customerGroupController.getAllCustomerGroups)
 router.post('/', customerGroupController.postOneCustomerGroup)
 
 //--DISPLAYING A CUSTOMER GROUP--
-router.get('/:customerGroupName', customerGroupController.getOneCustomerGroup)
+router.get('/basic/:customerGroupName', customerGroupController.getOneCustomerGroup)
 
 //--UPDATING A CUSTOMER GROUP--
-router.put('/:customerGroupName', customerGroupController.putOneCustomerGroup)
+router.put('/basic/:customerGroupName', customerGroupController.putOneCustomerGroup)
 
 //--DELETING A CUSTOMER GROUP--
-router.delete('/:customerGroupName', customerGroupController.deleteOneCustomerGroup)
+router.delete('/basic/:customerGroupName', customerGroupController.deleteOneCustomerGroup)
+
+//--ADRESS LIST REPORT(ALL)--
+router.get('/address',customerGroupController.getAllAddress)
 
 
 module.exports = router

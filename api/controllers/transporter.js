@@ -236,3 +236,36 @@ exports.deleteOneTransporter = (req, res, next) => {
         }
     })
 }
+
+//ADDRESS LIST REPORT(ALL)
+exports.getAllAddress = (req, res, next) => {
+    Transporter.find().lean()
+    .select('transporter phoneNo mobileNo emailId line1 line2 city state pinCode')
+    .collation({ "locale": "en", "strength": 2 })
+    .then( docs => {
+        const response = {
+            count: docs.length,
+            Transporter : docs.map( doc =>{
+                return {
+                    type : "TRANSPORTER",
+                    transporter: doc.transporter,
+                    phoneNo: doc.phoneNo,
+                    mobileNo: doc.mobileNo,
+                    emailId: doc.emailId,
+                    line1: doc.line1,
+                    line2: doc.line2,
+                    city: doc.city,
+                    state: doc.state,
+                    pinCode: doc.pinCode,
+                }
+            })
+        }
+        res.status(200).json(response)
+    })
+    .catch(err => {
+        console.log(err)
+        res.status(500).json({ 
+            code : 500,
+            error : err })
+    })    
+}

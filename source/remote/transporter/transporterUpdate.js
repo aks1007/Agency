@@ -47,7 +47,7 @@ transporter.oninput = function showTransporters()
 transporter.onblur = function checkTransporter()
 {
     transporter.value = transporter.value.trim() 
-    fetch('http://localhost:7070/transporter/' + transporter.value )
+    fetch('http://localhost:7070/transporter/basic/' + transporter.value )
     .then( response => response.json())
     .then(data => 
     {     
@@ -163,7 +163,7 @@ document.getElementById('submitButton').addEventListener('click',(event)=>
     if(req==0)
     {
         event.preventDefault()
-        fetch('http://localhost:7070/transporter/' + transporter.value, {
+        fetch('http://localhost:7070/transporter/basic/' + transporter.value, {
             method: 'PUT',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({

@@ -789,7 +789,7 @@ function showTransporters()
 //Function to check if the postal-service input is valid
 function checkTransporter(it)
 {
-    fetch('http://localhost:7070/transporter/' + it.value )
+    fetch('http://localhost:7070/transporter/basic/' + it.value )
     .then( response => response.json())
     .then(data => 
     {

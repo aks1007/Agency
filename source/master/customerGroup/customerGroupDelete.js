@@ -7,7 +7,7 @@ document.getElementById('submitButton').addEventListener('click', (event) => {
     else
     {
         event.preventDefault()
-        fetch('http://localhost:7070/customerGroup/'+ customerGroup.value , { method: 'DELETE'})
+        fetch('http://localhost:7070/customerGroup/basic/'+ customerGroup.value , { method: 'DELETE'})
         .then(response => response.json())
         .then(data => 
         {
@@ -69,7 +69,7 @@ function showCustomerGroups()
 
 function checkCustomerGroup()
 {
-    fetch('http://localhost:7070/customerGroup/' + customerGroup.value )
+    fetch('http://localhost:7070/customerGroup/basic/' + customerGroup.value )
     .then( response => response.json())
     .then(data => 
     {

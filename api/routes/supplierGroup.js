@@ -12,13 +12,15 @@ router.get('/', supplierGroupController.getAllSupplierGroups)
 router.post('/', supplierGroupController.postOneSupplierGroup)
 
 //--DISPLAYING A SUPPLIER GROUP--
-router.get('/:supplierGroupName', supplierGroupController.getOneSupplierGroup)
+router.get('/basic/:supplierGroupName', supplierGroupController.getOneSupplierGroup)
 
 //--UPDATING A SUPPLIER GROUP--
-router.put('/:supplierGroupName', supplierGroupController.putOneSupplierGroup)
+router.put('/basic/:supplierGroupName', supplierGroupController.putOneSupplierGroup)
 
 //--DELETING A SUPPLIER GROUP--
-router.delete('/:supplierGroupName', supplierGroupController.deleteOneSupplierGroup)
+router.delete('/basic/:supplierGroupName', supplierGroupController.deleteOneSupplierGroup)
 
+//--ADRESS LIST REPORT(ALL)--
+router.get('/address', supplierGroupController.getAllAddress)
 
 module.exports = router

@@ -50,7 +50,7 @@ customerGroup.oninput = function showCustomerGroups()
 customerGroup.onblur = function checkCustomerGroup()
 {
     customerGroup.value = customerGroup.value.trim() 
-    fetch('http://localhost:7070/customerGroup/' + customerGroup.value )
+    fetch('http://localhost:7070/customerGroup/basic/' + customerGroup.value )
     .then( response => response.json())
     .then(data => 
     {     
@@ -215,7 +215,7 @@ document.getElementById('submitButton').addEventListener('click',(event)=>
     if(req==0)
     {
         event.preventDefault()
-        fetch('http://localhost:7070/customerGroup/' + customerGroup.value, {
+        fetch('http://localhost:7070/customerGroup/basic/' + customerGroup.value, {
             method: 'PUT',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
