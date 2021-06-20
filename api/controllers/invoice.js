@@ -268,6 +268,8 @@ exports.deleteOneInvoice = (req, res, next) =>
     })
 }   
 
+
+//GETTING LAST INVOICE NO.
 exports.getLastInvoice = (req, res, next) => {
     Invoice.find().sort({serialNo : -1}).limit(1).lean()
     .select('serialNo')
@@ -291,6 +293,8 @@ exports.getLastInvoice = (req, res, next) => {
     })    
 }
 
+
+//GETTING ALL INVOICE FALLING WITHIN A DATE RANGE
 exports.getRangeInvoices = (req, res) => {
     var from = req.params.from
     var to = req.params.to
@@ -339,6 +343,43 @@ exports.getRangeInvoices = (req, res) => {
                     status : doc.status, 
                     grA : doc.grA,
                     paid : doc.paid
+                }
+            })
+        }
+        res.status(200).json(response)
+    })
+    .catch(err => {
+        console.log(err)
+        res.status(500).json({ 
+            code : 500,
+            error : err })
+    })    
+}
+
+//GETTING ALL INVOICE's LR DETAILS FALLING WITHIN A DATE RANGE
+exports.getRangeLR = (req, res) => {
+    var from = req.params.from
+    var to = req.params.to
+    Invoice.find({date : { $gte : new Date(from), $lt : new Date(to)}}).sort({billNo : 1}).lean()
+    .select('serialNo billNo date customer supplier transporter destination cases lrNo lrDate ca netAmount')
+    .collation({ "locale": "en", "strength": 2 })
+    .then( docs => {
+        const response = {
+            count: docs.length,
+            Invoice : docs.map( doc =>{
+                return {
+                    serialNo : doc.serialNo,
+                    billNo : doc.billNo,
+                    date : doc.date,
+                    customer : doc.customer,
+                    supplier : doc.supplier,
+                    transporter : doc.transporter,
+                    destination : doc.destination,
+                    cases : doc.cases,
+                    lrNo : doc.lrNo,
+                    lrDate : doc.lrDate,
+                    ca : doc.ca,
+                    netAmount : doc.netAmount,
                 }
             })
         }

@@ -37,7 +37,7 @@ submitButton.addEventListener('click', (event) => {
 
     else
     {
-        fetch('http://localhost:7070/customer/basic', {
+        fetch('http://localhost:7070/customer/', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({

@@ -50,7 +50,7 @@ document.getElementById('submitButton').addEventListener('click', (event) => {
 
 function showCustomers()
 {
-    fetch('http://localhost:7070/customer/basic')
+    fetch('http://localhost:7070/customer/')
     .then( response => response.json())
     .then(data =>
     {

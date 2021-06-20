@@ -38,7 +38,7 @@ customer.oninput = function showCustomers()
     blip.disabled = true
     blackList.disabled = true
     submitButton.disabled = true
-    fetch('http://localhost:7070/customer/basic')
+    fetch('http://localhost:7070/customer/')
     .then( response => response.json())
     .then(data =>
     {

@@ -206,8 +206,7 @@ searchButton.addEventListener('click',(event) =>
 function filteredData()
 {
     var x = new Date(dateTo.value)
-    var dt = new Date(x.setDate(x.getDate()))
-    console.log(dt)
+    var dt = new Date(x.setDate(x.getDate()+1))
     fetch("http://localhost:7070/invoice/range/from="+dateFrom.value+"&to="+dt)
     .then(request => request.json())
     .then(data =>

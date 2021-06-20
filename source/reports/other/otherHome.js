@@ -56,7 +56,7 @@ function shortCuts(event)
 
     if(event.keyCode == 51)
     {
-        window.location = "lrReport.html"
+        openReport('source/reports/other/lrReport.html')
     }
 
     if(event.keyCode == 52)

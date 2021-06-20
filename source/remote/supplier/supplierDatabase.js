@@ -28,7 +28,7 @@ function showDatabase()
     const Theme = localStorage.getItem('theme')
     bodyTag.setAttribute('data-theme',Theme)   
 
-    fetch('http://localhost:7070/supplier/basic')
+    fetch('http://localhost:7070/supplier/')
     .then( response => response.json())
     .then(data => 
     {

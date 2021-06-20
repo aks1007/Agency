@@ -6,10 +6,10 @@ const router = express.Router()
 
 
 //--DISPLAYING ALL CUSTOMER GROUPS--
-router.get('/basic', customerController.getAllCustomers)
+router.get('/', customerController.getAllCustomers)
 
 //--CREATING A NEW CUSTOMER GROUP--
-router.post('/basic', customerController.postOneCustomer)
+router.post('/', customerController.postOneCustomer)
 
 //--DISPLAYING A CUSTOMER GROUP--
 router.get('/basic/:customerName', customerController.getOneCustomer)

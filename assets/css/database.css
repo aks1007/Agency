@@ -309,6 +309,11 @@ td
   left: 0;
 }
 
+/* SIDE-NAVIGATION-LINK-ON-FOCUS */
+#mySidenavLeft a:focus{
+  outline: none;
+}
+
 /* INPUT */
 input
 {  

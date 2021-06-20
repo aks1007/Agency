@@ -315,6 +315,13 @@ input[type=number]::-webkit-outer-spin-button
   left: 0;
 }
 
+
+/* SIDE-NAVIGATION-LINK-ON-FOCUS */
+#mySidenavLeft a:focus{
+  outline: none;
+}
+
+
 #mySidenavRight a {
   position: absolute;
   right: -200px;
@@ -337,6 +344,11 @@ input[type=number]::-webkit-outer-spin-button
 /* SIDE-NAVIGATION-LINK-ON-HOVER */
 #mySidenavRight a:hover{
   right: 0;
+}
+
+/* SIDE-NAVIGATION-LINK-ON-FOCUS */
+#mySidenavRight a:focus{
+  outline: none;
 }
 
 /* SIDE-NAVIGATION-DELETE-LINK */

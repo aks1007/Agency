@@ -81,7 +81,7 @@ function setDates(d)
 
 function showCustomers()
 {
-    fetch('http://localhost:7070/customer/basic')
+    fetch('http://localhost:7070/customer/')
     .then( response => response.json())
     .then(data =>
     {
@@ -100,7 +100,7 @@ function showCustomers()
 
 function showSuppliers()
 {
-    fetch('http://localhost:7070/supplier/basic')
+    fetch('http://localhost:7070/supplier/')
     .then( response => response.json())
     .then(data =>
     {

@@ -7,10 +7,10 @@ const router = express.Router()
 
 
 //--DISPLAYING ALL SUPPLIER GROUPS--
-router.get('/basic', supplierController.getAllSuppliers)
+router.get('/', supplierController.getAllSuppliers)
 
 //--CREATING A NEW SUPPLIER GROUP--
-router.post('/basic', supplierController.postOneSupplier)
+router.post('/', supplierController.postOneSupplier)
 
 //--DISPLAYING A SUPPLIER GROUP--
 router.get('/basic/:supplierName', supplierController.getOneSupplier)

@@ -186,7 +186,7 @@ searchButton.addEventListener('click',(event) =>
 function filteredData()
 {
     var x = new Date(dateTo.value)
-    var dt = new Date(x.setDate(x.getDate())
+    var dt = new Date(x.setDate(x.getDate()+1))
     console.log(dt)
     fetch("http://localhost:7070/orderForm/range/from="+dateFrom.value+"&to="+dt)
     .then(request => request.json())

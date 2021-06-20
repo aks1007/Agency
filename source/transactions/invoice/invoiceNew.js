@@ -1,5 +1,3 @@
-const e = require("express")
-
 var req
 
 //On Page Load
@@ -92,7 +90,7 @@ function itemDisplay(){
 
 function showCustomers()
 {
-    fetch('http://localhost:7070/customer/basic')
+    fetch('http://localhost:7070/customer/')
     .then( response => response.json())
     .then(data =>
     {
@@ -131,7 +129,7 @@ function checkCustomer()
 
 function showSuppliers()
 {
-    fetch('http://localhost:7070/supplier/basic')
+    fetch('http://localhost:7070/supplier/')
     .then( response => response.json())
     .then(data =>
     {
@@ -708,7 +706,7 @@ function setValues()
         z[i] = document.getElementById(x[i]).valueAsNumber;
     }
     var c = document.getElementById('ca').valueAsNumber
-    document.getElementById('netAmount').valueAsNumber = c + z[0] - z[1] - z[2] - z[3] + z[4] - z[5] + z[6] + z[7] + z[8]
+    document.getElementById('netAmount').valueAsNumber = (c + z[0] - z[1] - z[2] - z[3] + z[4] - z[5] + z[6] + z[7] + z[8]).toFixed(2)
 }
 
 var p

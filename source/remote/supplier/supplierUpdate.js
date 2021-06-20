@@ -42,7 +42,7 @@ supplier.oninput = function showSuppliers()
     blip.disabled = true
     blackList.disabled = true
     submitButton.disabled = true
-    fetch('http://localhost:7070/supplier/basic')
+    fetch('http://localhost:7070/supplier/')
     .then( response => response.json())
     .then(data =>
     {

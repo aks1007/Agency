@@ -27,6 +27,9 @@ router.get('/last', invoiceController.getLastInvoice)
 //--DISPLAYING ALL INVOICES BETWEEN A DATE RANGE
 router.get('/range/:from&:to',invoiceController.getRangeInvoices)
 
+//--DISPLAYING ALL INVOICE'S LR DETAILS BETWEEN A DATE RANGE
+router.get('/lr/:from&:to',invoiceController.getRangeLR)
+
 //--DISPLAYING ALL INVOICES FROM A SPECIFIC COMBINATION OF CUSTOMER AND SUPPLIER : 
 router.get('/combo/:customer/:supplier', invoiceController.getAllInvoicesFromCombo)
 

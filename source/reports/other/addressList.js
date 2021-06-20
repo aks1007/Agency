@@ -35,13 +35,11 @@ function shortCuts(event)
 searchButton.addEventListener('click', ()=>
 {
     var limit = $("#category").chosen().val().length
-    console.log(limit)
     deleteAllRows()
 
     for(i=0;i<limit;i++)
     {
         var cat = $("#category").chosen().val()[i]
-        console.log(i, cat)
         if(cat == 'CUSTOMERS')
         {
             customerAddress()
@@ -86,7 +84,6 @@ function customerAddress()
     .then(data => 
     {   
         document.getElementById('searchRow').style.display = 'none'
-        console.log(data)
         var limit = data.count
         for(i=0; i<limit; i++)
         {   
@@ -189,7 +186,6 @@ function supplierAddress()
     .then(data => 
     {   
         document.getElementById('searchRow').style.display = 'none'
-        console.log(data)
         var limit = data.count
         for(i=0; i<limit; i++)
         {   
@@ -292,7 +288,6 @@ function customerGroupAddress()
     .then(data => 
     {   
         document.getElementById('searchRow').style.display = 'none'
-        console.log(data)
         var limit = data.count
         for(i=0; i<limit; i++)
         {   
@@ -395,7 +390,6 @@ function supplierGroupAddress()
     .then(data => 
     {   
         document.getElementById('searchRow').style.display = 'none'
-        console.log(data)
         var limit = data.count
         for(i=0; i<limit; i++)
         {   
@@ -498,7 +492,6 @@ function transporterAddress()
     .then(data => 
     {   
         document.getElementById('searchRow').style.display = 'none'
-        console.log(data)
         var limit = data.count
         for(i=0; i<limit; i++)
         {   
@@ -545,7 +538,6 @@ function transporterAddress()
 
             var cell5 = row.insertCell(5)
             var element6 = document.createElement("span")
-            element6.innerHTML = "N/A"
             element6.style.textAlign = "centre"
             cell5.appendChild(element6);
 
@@ -602,7 +594,6 @@ function postAddress()
     .then(data => 
     {   
         document.getElementById('searchRow').style.display = 'none'
-        console.log(data)
         var limit = data.count
         for(i=0; i<limit; i++)
         {   
@@ -649,7 +640,6 @@ function postAddress()
 
             var cell5 = row.insertCell(5)
             var element6 = document.createElement("span")
-            element6.innerHTML = "N/A"
             element6.style.textAlign = "centre"
             cell5.appendChild(element6);
 
