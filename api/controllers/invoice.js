@@ -356,43 +356,6 @@ exports.getRangeInvoices = (req, res) => {
     })    
 }
 
-//GETTING ALL INVOICE's LR DETAILS FALLING WITHIN A DATE RANGE
-exports.getRangeLR = (req, res) => {
-    var from = req.params.from
-    var to = req.params.to
-    Invoice.find({date : { $gte : new Date(from), $lt : new Date(to)}}).sort({billNo : 1}).lean()
-    .select('serialNo billNo date customer supplier transporter destination cases lrNo lrDate ca netAmount')
-    .collation({ "locale": "en", "strength": 2 })
-    .then( docs => {
-        const response = {
-            count: docs.length,
-            Invoice : docs.map( doc =>{
-                return {
-                    serialNo : doc.serialNo,
-                    billNo : doc.billNo,
-                    date : doc.date,
-                    customer : doc.customer,
-                    supplier : doc.supplier,
-                    transporter : doc.transporter,
-                    destination : doc.destination,
-                    cases : doc.cases,
-                    lrNo : doc.lrNo,
-                    lrDate : doc.lrDate,
-                    ca : doc.ca,
-                    netAmount : doc.netAmount,
-                }
-            })
-        }
-        res.status(200).json(response)
-    })
-    .catch(err => {
-        console.log(err)
-        res.status(500).json({ 
-            code : 500,
-            error : err })
-    })    
-}
-
 //DISPLAYING ALL INVOICES FROM A SPECIFIC COMBINATION OF CUSTOMER AND SUPPLIER 
 exports.getAllInvoicesFromCombo = (req, res) => {
     var customer = req.params.customer
@@ -601,4 +564,44 @@ exports.getAnyInvoiceFromBill = (req, res, next) =>
         })
         console.log(res)
     })              
-}              
+}   
+
+
+//GETTING ALL INVOICE's LR DETAILS FALLING WITHIN A DATE RANGE
+exports.getRangeLR = (req, res) => {
+    var from = req.params.from
+    var to = req.params.to
+    var q = {date : { $gte : new Date(from), $lt : new Date(to)}}
+    var query = {...req.body, ...q}
+    Invoice.find(query).sort({billNo : 1}).lean()
+    .select('serialNo billNo date customer supplier transporter destination cases lrNo lrDate ca netAmount')
+    .collation({ "locale": "en", "strength": 2 })
+    .then( docs => {
+        const response = {
+            count: docs.length,
+            Invoice : docs.map( doc =>{
+                return {
+                    serialNo : doc.serialNo,
+                    billNo : doc.billNo,
+                    date : doc.date,
+                    customer : doc.customer,
+                    supplier : doc.supplier,
+                    transporter : doc.transporter,
+                    destination : doc.destination,
+                    cases : doc.cases,
+                    lrNo : doc.lrNo,
+                    lrDate : doc.lrDate,
+                    ca : doc.ca,
+                    netAmount : doc.netAmount,
+                }
+            })
+        }
+        res.status(200).json(response)
+    })
+    .catch(err => {
+        console.log(err)
+        res.status(500).json({ 
+            code : 500,
+            error : err })
+    })    
+}

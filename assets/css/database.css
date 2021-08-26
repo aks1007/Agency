@@ -191,6 +191,16 @@ body
   margin-bottom: 0;
 }
 
+/*NO DATA RESPONSE STATEMENT*/
+#noData
+{
+  color: var(--top-heading-text);
+  font-family: 'Comfortaa';
+  font-size: 15px;
+  transition: all 0.3s ease-in-out;
+  display: none;
+}
+
 ::-webkit-scrollbar {
   display: none;
 }
@@ -230,7 +240,7 @@ th
   font-family: 'Alegreya';
   font-weight: 900; 
   background: var(--heading);
-  color: var(--on-heading);
+  color: var(--on-heading) !important;
   font-size: 25px;
 }
 
@@ -418,9 +428,4 @@ option
 #searchByDate :focus
 {
   outline: none;
-}
-
-span
-{
-  color: var(--on-background);
 }

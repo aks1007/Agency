@@ -458,6 +458,18 @@ function addItem()
         }
         calculateCumulative()
     }
+
+    element2.addEventListener('keydown', (event,keyCode)=>
+    {
+        var x = event.keyCode
+
+        if(x==112)
+        {
+            var address = 'source/remote/item/itemNew.html'
+            const ipcRenderer = require('electron').ipcRenderer
+            ipcRenderer.send('remoteWindow', address )
+        }
+    })
 }
 
 //Function to delete rows from item table
