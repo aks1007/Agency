@@ -21,7 +21,7 @@ router.put('/basic/:serialNo', invoiceController.putOneInvoice)
 //--DELETING A INVOICE--
 router.delete('/basic/:serialNo', invoiceController.deleteOneInvoice)
 
-
+//-----------------------------------------------------------------CUSTOM REQUESTS
 
 //--GET LAST INVOICE's SERIAL NO--
 router.get('/last', invoiceController.getLastInvoice)
@@ -40,7 +40,10 @@ router.get('/status/:customer/:supplier/:billNo', invoiceController.getAnyInvoic
 
 //-----------------------------------------------------------------REPORTS
 
-//--DISPLAYING ALL INVOICE'S LR DETAILS BETWEEN A DATE RANGE
-router.post('/lr/:from&:to',invoiceController.getRangeLR)
+//--L.R. REPORT
+router.post('/lr/:from&:to',invoiceController.lrReport)
+
+//--DEALING REPORT
+router.post('/dealr/:from&:to',invoiceController.dealingReport)
 
 module.exports = router

@@ -30,6 +30,7 @@ function shortCuts(event)
     if(event.keyCode==27)
     {
         var x = searchRow.style.display
+        console.log(x)
         if(x=='none')
         {
             searchRow.style.display = 'block'

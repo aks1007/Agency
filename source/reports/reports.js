@@ -42,7 +42,7 @@ function shortCuts(event)
         window.location = "../home.html"
     }
 
-    if(event.altKey && event.keyCode==82)
+    if(event.altKey && event.keyCode==84)
     {
         window.location = "../transactions/transactions.html"
     }

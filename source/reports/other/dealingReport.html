@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+
+    <meta charset="UTF-8" content="width=device-width, initial-scale=1"> 
+    
+<title>AGENCY by TANTRA </title>   
+
+    <!--CSS--> 
+    <link rel="stylesheet" href="../../../node_modules/@fortawesome/fontawesome-free/css/all.css">
+    <link rel="stylesheet" href="../../../assets/css/chosen.css">
+    <link rel="stylesheet" href="../../../assets/css/database.css">
+    <link rel="stylesheet" href="../../../assets/css/hover.css">  
+    <link rel="stylesheet" href="../../../assets/fonts/Alegreya.css">
+    <link rel="stylesheet" href="../../../assets/fonts/Comfortaa.css">
+    <link rel="stylesheet" href="../../../assets/fonts/Fredoka-One.css">
+    <link rel="stylesheet" href="../../../assets/fonts/Orbitron.css">    
+
+  </head>
+
+  <body onkeydown="shortCuts(event)">
+
+    <div class="menu-bar">
+      <!--HEADING-->
+      <div id=top>
+
+        <h1 id=topHeading>
+
+          DEALING REPORT
+
+        </h1>
+
+        <h3 id=noData></h3>
+      
+      </div>
+    </div>
+
+    <div id=searchRow style="margin-top:100px;">
+
+        <table style="margin-left : 12.5% ; width: 75%;">
+
+          <tr>
+
+              <td style="width: 50%;">
+                <span>
+                  FROM
+                </span>
+                <br>
+                <input type="date" id="dateFrom" autocomplete="off" style="height: 28px;padding: 0px 5px;" autofocus required>
+              </td>
+
+              <td style="width: 50%;">
+                <span>
+                  TO
+                </span>
+                <br>
+                <input type="date" id="dateTo" autocomplete="off" style="height: 28px;padding: 0px 5px;" required>
+              </td>
+
+          </tr>
+        
+        </table>  
+
+        <table style="width: 75%;margin-left: 12.5%;">  
+
+          <tr>
+
+            <td style="padding-top: 15px;width: 50%;">
+              <span style="display: block;">
+                PARTY A
+              </span>
+              <br>
+              <select style="height: 28px;padding: 0px 5px;"  id=partyA required>
+                <option value="ALL CUSTOMERS">1. ALL CUSTOMERS</option>
+                <option value="SELECT CUSTOMERS">2. SELECT CUSTOMERS</option>
+                <option value="ALL SUPPLIERS">3. ALL SUPPLIERS</option>
+                <option value="SELECT SUPPLIERS">4. SELECT SUPPLIERS</option>
+                <option value="ALL CUSTOMER GROUPS">5. ALL CUSTOMER GROUPS</option>
+                <option value="SELECT CUSTOMER GROUPS">6. SELECT CUSTOMER GROUPS</option>
+                <option value="ALL SUPPLIER GROUPS">7. ALL SUPPLIER GROUPS</option>
+                <option value="SELECT SUPPLIER GROUPS">8. SELECT SUPPLIER GROUPS</option>
+                <option value="ALL TRANSPORTERS">9. ALL TRANSPORTERS</option>
+                <option value="SELECT TRANSPORTERS">10. SELECT TRANSPORTERS</option>
+              </select> 
+            </td>
+
+            <td style="padding-top: 15px;"width: 50%;>
+              <span style="display: block;">
+                PARTY B
+              </span>
+              <br>
+              <select style="height: 28px;padding: 0px 5px;"  id=partyB required>
+                <option value="ALL CUSTOMERS">1. ALL CUSTOMERS</option>
+                <option value="SELECT CUSTOMERS">2. SELECT CUSTOMERS</option>
+                <option value="ALL SUPPLIERS">3. ALL SUPPLIERS</option>
+                <option value="SELECT SUPPLIERS">4. SELECT SUPPLIERS</option>
+                <option value="ALL CUSTOMER GROUPS">5. ALL CUSTOMER GROUPS</option>
+                <option value="SELECT CUSTOMER GROUPS">6. SELECT CUSTOMER GROUPS</option>
+                <option value="ALL SUPPLIER GROUPS">7. ALL SUPPLIER GROUPS</option>
+                <option value="SELECT SUPPLIER GROUPS">8. SELECT SUPPLIER GROUPS</option>
+                <option value="ALL TRANSPORTERS">9. ALL TRANSPORTERS</option>
+                <option value="SELECT TRANSPORTERS">10. SELECT TRANSPORTERS</option>
+              </select> 
+            </td>
+
+          </tr>
+
+        </table>
+        
+        <table style="margin-left : 12.5% ; width: 75%;">
+
+          <tr>
+
+            <td style="padding-top: 15px;width: 50%;">
+              <span>
+                CUSTOMER
+              </span>
+              <br>
+              <select data-placeholder="Choose a Customer..." id=customer class=chosen multiple disabled>
+              </select> 
+            </td>
+
+            <td style="padding-top: 15px;width: 50%;">
+              <span>
+                SUPPLIER
+              </span>
+              <br>
+              <select data-placeholder="Choose a Supplier..." id=supplier class="chosen" multiple disabled>
+              </select> 
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td style="padding-top: 15px;width: 50%;">
+              <span>
+                CUSTOMER GROUP
+              </span>
+              <br>
+              <select data-placeholder="Choose a Customer Group..." id=customerGroup class=chosen multiple disabled>
+              </select> 
+            </td>
+
+            <td style="padding-top: 15px;width: 50%;">
+              <span>
+                SUPPLIER GROUP
+              </span>
+              <br>
+              <select data-placeholder="Choose a Supplier Group..." id=supplierGroup class="chosen" multiple disabled>
+              </select> 
+            </td>
+
+          </tr>
+
+        </table>  
+        
+        <table style="width: 33.33%;margin-left: 33.33%;">  
+
+          <tr>
+    
+            <td style="padding-top: 15px;">
+              <span>
+                TRANSPORTER
+              </span>
+              <br>
+              <select data-placeholder="Choose a Transporter..." id=transporter class=chosen multiple disabled>
+              </select> 
+            </td>
+
+          </tr>
+
+        </table>
+  
+        <div style="text-align: center">
+          <input type="submit" id="searchButton" class = "btn" value="SHOW REPORT">
+        </div> 
+  
+      </div>
+  
+
+    <div>
+
+      <table id="database" style="display: none;margin-top: 100px;">
+
+        <!--INVOICE DATABASE-->            
+        <tr style="background : transparent; border : 0px solid;">
+
+          <th>
+            <span>
+              #
+            </span>
+          </th>
+
+          <th>
+            <span>
+              DATE
+            </span>
+          </th>
+
+          <th>
+            <span>
+              BILL NO
+            </span>
+          </th> 
+  
+          <th>
+            <span>
+              CUSTOMER
+            </span>
+          </th>  
+          
+          <th>
+            <span>
+              SUPPLIER
+            </span>
+          </th>   
+
+          <th>
+            <span>
+              GROSS AMOUNT
+            </span>
+          </th>
+
+          <th>
+            <span>
+              NET AMOUNT
+            </span>
+          </th>
+
+          <th>
+            <span>
+              DESTINATION
+            </span>
+          </th>
+
+          <th>
+            <span>
+              TRANSPORTER
+            </span>
+          </th>
+
+          <th>
+            <span>
+              L.R. DATE
+            </span>
+          </th>
+
+          <th>
+            <span>
+              L.R. NO.
+            </span>
+          </th>
+
+          <th>
+            <span>
+              NO. OF CASES
+            </span>
+          </th>
+                  
+        </tr> 
+
+      </table>    
+
+    </div>      
+    <script src="dealingReport.js"></script>
+
+  </body>  
+
+</html>    

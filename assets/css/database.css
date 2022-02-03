@@ -373,7 +373,7 @@ select
 select:focus
 {
   outline: none;
-  box-shadow: 0 0 3pt 2pt var(--on-background);
+  box-shadow: 0 0 5pt 4pt var(--on-background);
 }
 
 select:disabled
@@ -428,4 +428,9 @@ option
 #searchByDate :focus
 {
   outline: none;
+}
+
+#searchRow span
+{
+  color: var(--on-background);
 }

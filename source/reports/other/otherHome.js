@@ -51,7 +51,7 @@ function shortCuts(event)
 
     if(event.keyCode == 50)
     {
-        window.location = "dealingReport.html"
+        openReport('source/reports/other/dealingReport.html')
     }
 
     if(event.keyCode == 51)
@@ -107,3 +107,13 @@ document.getElementById('payment').tabIndex = -1;
 document.getElementById('brokerage').tabIndex = -1;
 document.getElementById('goodsReturn').tabIndex = -1;
 document.getElementById('other').tabIndex = -1;
+
+document.getElementById('addressList').tabIndex = 1;
+document.getElementById('dealingReport').tabIndex = 2;
+document.getElementById('lrReport').tabIndex = 3;
+document.getElementById('ledgerReport').tabIndex = 4;
+document.getElementById('outstandingReport').tabIndex = 5;
+document.getElementById('biltyReport').tabIndex = 6;
+document.getElementById('postReceivedRegister').tabIndex = 7;
+document.getElementById('tdsReceivableReport').tabIndex = 8;
+document.getElementById('issueOrderRegister').tabIndex = 9;

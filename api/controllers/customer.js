@@ -298,3 +298,54 @@ exports.getAllAddress = (req, res, next) => {
             error : err })
     })    
 }
+
+exports.getGroupsList = function(req, res)
+{
+    var t = req.params.type
+    if(t == 'all')
+    {
+        Customer.find({customerGroup : { $nin : ''}}).sort({customerGroup : 1}).lean()
+        .select('customer')
+        .collation({ "locale": "en", "strength": 2 })
+        .then(docs => {        
+            const response = {
+                count : docs.length,
+                Customer : docs.map(doc => {
+                    return {
+                        customer : doc.customer,
+                    }
+                })
+            }
+            res.status(200).json(response)
+        })
+        .catch(err => {
+            console.log(err)
+            res.status(500).json({ 
+                code : 500,
+                error : err })
+        })
+    }  
+    if(t == 'select')
+    {
+        Customer.find({customerGroup : { $in : req.body}}).sort({customerGroup : 1}).lean()
+        .select('customer')
+        .collation({ "locale": "en", "strength": 2 })
+        .then(docs => {        
+            const response = {
+                count : docs.length,
+                Customer : docs.map(doc => {
+                    return {
+                        customer : doc.customer,
+                    }
+                })
+            }
+            res.status(200).json(response)
+        })
+        .catch(err => {
+            console.log(err)
+            res.status(500).json({ 
+                code : 500,
+                error : err })
+        })
+    }  
+}

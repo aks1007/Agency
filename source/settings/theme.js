@@ -3,54 +3,102 @@ tricolorTheme = document.getElementById('tricolorTheme')
 classicTheme = document.getElementById('classicTheme')
 darkTheme = document.getElementById('darkTheme')
 
+//ON-FOCUS
+lightTheme.addEventListener('mouseover', () =>{
+    localStorage.setItem('theme', 'light')
+    const bodyTag = document.getElementsByTagName("body")[0]
+    const Theme = localStorage.getItem('theme')
+    bodyTag.setAttribute('data-theme',Theme)
+})
+
+tricolorTheme.addEventListener('mouseover', () =>{
+    localStorage.setItem('theme', 'tricolor')
+    const bodyTag = document.getElementsByTagName("body")[0]
+    const Theme = localStorage.getItem('theme')
+    bodyTag.setAttribute('data-theme',Theme)
+})
+
+classicTheme.addEventListener('mouseover', () =>{
+    localStorage.setItem('theme', 'classic')
+    const bodyTag = document.getElementsByTagName("body")[0]
+    const Theme = localStorage.getItem('theme')
+    bodyTag.setAttribute('data-theme',Theme)
+})
+
+darkTheme.addEventListener('mouseover', () =>{
+    localStorage.setItem('theme', 'dark')
+    const bodyTag = document.getElementsByTagName("body")[0]
+    const Theme = localStorage.getItem('theme')
+    bodyTag.setAttribute('data-theme',Theme)
+})
+
+//ON-HOVER
+lightTheme.addEventListener('mouseover', () =>{
+    localStorage.setItem('theme', 'light')
+    const bodyTag = document.getElementsByTagName("body")[0]
+    const Theme = localStorage.getItem('theme')
+    bodyTag.setAttribute('data-theme',Theme)
+    lightTheme.blur()
+    tricolorTheme.blur()
+    classicTheme.blur()
+    darkTheme.blur()
+})
+
+tricolorTheme.addEventListener('mouseover', () =>{
+    localStorage.setItem('theme', 'tricolor')
+    const bodyTag = document.getElementsByTagName("body")[0]
+    const Theme = localStorage.getItem('theme')
+    bodyTag.setAttribute('data-theme',Theme)
+})
+
+classicTheme.addEventListener('mouseover', () =>{
+    localStorage.setItem('theme', 'classic')
+    const bodyTag = document.getElementsByTagName("body")[0]
+    const Theme = localStorage.getItem('theme')
+    bodyTag.setAttribute('data-theme',Theme)
+})
+
+darkTheme.addEventListener('mouseover', () =>{
+    localStorage.setItem('theme', 'dark')
+    const bodyTag = document.getElementsByTagName("body")[0]
+    const Theme = localStorage.getItem('theme')
+    bodyTag.setAttribute('data-theme',Theme)
+})
+
+
+//ON-CLICK
 lightTheme.addEventListener('click', () =>{
     localStorage.setItem('theme', 'light')
-    console.log('Light')
-    location.reload()
+    const bodyTag = document.getElementsByTagName("body")[0]
+    const Theme = localStorage.getItem('theme')
+    bodyTag.setAttribute('data-theme',Theme)
 })
 
 tricolorTheme.addEventListener('click', () =>{
     localStorage.setItem('theme', 'tricolor')
-    console.log('')
-    location.reload()
+    const bodyTag = document.getElementsByTagName("body")[0]
+    const Theme = localStorage.getItem('theme')
+    bodyTag.setAttribute('data-theme',Theme)
 })
 
 classicTheme.addEventListener('click', () =>{
     localStorage.setItem('theme', 'classic')
-    console.log('Classic')
-    location.reload()
+    const bodyTag = document.getElementsByTagName("body")[0]
+    const Theme = localStorage.getItem('theme')
+    bodyTag.setAttribute('data-theme',Theme)
 })
 
 darkTheme.addEventListener('click', () =>{
     localStorage.setItem('theme', 'dark')
-    console.log('Dark')
-    location.reload()
+    const bodyTag = document.getElementsByTagName("body")[0]
+    const Theme = localStorage.getItem('theme')
+    bodyTag.setAttribute('data-theme',Theme)
 })
 
 window.onload = ()=>{
     const bodyTag = document.getElementsByTagName("body")[0]
     const Theme = localStorage.getItem('theme')
     bodyTag.setAttribute('data-theme',Theme)
-    
-    if(Theme == 'light')
-    {
-        lightTheme.focus()
-    }
-
-    if(Theme == 'tricolor')
-    {
-        tricolorTheme.focus()
-    }
-
-    if(Theme == 'classic')
-    {
-        classicTheme.focus()
-    }
-
-    if(Theme == 'dark')
-    {
-        darkTheme.focus()
-    }
 }
 
 function shortCuts(event)

@@ -23,4 +23,7 @@ router.delete('/basic/:customerName', customerController.deleteOneCustomer)
 //--ADRESS LIST REPORT(ALL)--
 router.get('/address',customerController.getAllAddress)
 
+//--DISPLAYING ALL CUSTOMERS/SUPPLIERS WHICH BELONG TO ANY GROUP
+router.post('/groupsList/:type', customerController.getGroupsList)
+
 module.exports = router
